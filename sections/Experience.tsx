@@ -11,10 +11,10 @@ const experiences = [
     period: "Feb 2026 — Sekarang",
     location: "Remote, Indonesia",
     points: [
-      "Mengembangkan model predictive maintenance untuk motor industri, akurasi 94.2%",
-      "Membangun dashboard SCADA berbasis React + Node.js untuk monitoring real-time",
-      "Membuat tool audit energi otomatis yang memangkas waktu pengerjaan 70%",
-      "Deploy model ML ke production menggunakan FastAPI dan Docker",
+      "-",
+      "-",
+      "-",
+      "-",
     ],
   },
   {
@@ -24,10 +24,10 @@ const experiences = [
     period: "Maret 2025 — Sekarang",
     location: "Lhokseumawe, Indonesia",
     points: [
-      "Merancang sistem monitoring distribusi daya 20kV dengan deteksi anomali real-time",
-      "Implementasi sistem proteksi dan kontrol untuk beban industri hingga 2MW",
-      "Memimpin implementasi sistem SCADA berbasis web untuk 2 gedung komersial",
-      "Menurunkan downtime produksi 25% melalui strategi maintenance berbasis data",
+      "Menjadi instruktur di 6 laboratorium teknik listrik, mendukung praktikum mahasiswa semester 2–7.",
+      "Mengelola kegiatan laboratorium end-to-end termasuk persiapan alat, pengajaran, troubleshooting rangkaian, dan evaluasi.",
+      "Memberikan instruksi praktis pada mesin listrik, sistem tenaga, elektronika, dan embedded system menggunakan berbagai alat ukur dan kit eksperimen.",
+      "Melakukan kalibrasi, pengujian sistem, serta berkontribusi dalam pengembangan modul dan SOP laboratorium bersama dosen.",
     ],
   },
   {
@@ -37,10 +37,10 @@ const experiences = [
     period: "April 2025 — Nov 2025",
     location: "Hybrid, Indonesia",
     points: [
-      "Mengembangkan model predictive maintenance untuk motor industri, akurasi 94.2%",
-      "Membangun dashboard SCADA berbasis React + Node.js untuk monitoring real-time",
-      "Membuat tool audit energi otomatis yang memangkas waktu pengerjaan 70%",
-      "Deploy model ML ke production menggunakan FastAPI dan Docker",
+      "Memimpin bidang teknikal dalam proyek PKM-PM, menangani arsitektur sistem, implementasi, hingga deployment solusi AR dan web.",
+      "Mengembangkan aplikasi AR berbasis marker menggunakan Unity dan Vuforia dengan fitur tracking, animasi, dan UI interaktif.",
+      "Membuat aset 3D lengkap di Blender yang dioptimasi untuk performa real-time pada aplikasi AR.",
+      "Melakukan deployment dan demonstrasi langsung di sekolah, meningkatkan pemahaman siswa melalui storytelling 3D interaktif.",
     ],
   },
   {
@@ -50,10 +50,10 @@ const experiences = [
     period: "Maret 2025 — Jul 2025",
     location: "Lhokseumawe, Indonesia",
     points: [
-      "Mengembangkan model predictive maintenance untuk motor industri, akurasi 94.2%",
-      "Membangun dashboard SCADA berbasis React + Node.js untuk monitoring real-time",
-      "Membuat tool audit energi otomatis yang memangkas waktu pengerjaan 70%",
-      "Deploy model ML ke production menggunakan FastAPI dan Docker",
+      "Mengembangkan sistem logbook magang berbasis web untuk mencatat aktivitas mingguan bagi ±40 pengguna aktif.",
+      "Mengimplementasikan fitur CRUD, autentikasi pengguna, dan integrasi MySQL untuk menggantikan pelaporan manual.",
+      "Melakukan maintenance dan pembaruan konten website UPT BKK serta portal karier, termasuk artikel dan lowongan kerja.",
+      "Berkontribusi pada debugging, peningkatan UI/UX, deployment dasar, serta kolaborasi dengan stakeholder non-teknis.",
     ],
   },
   {
@@ -63,9 +63,10 @@ const experiences = [
     period: "Jan 2025 — Feb 2025",
     location: "Simalungun, Indonesia",
     points: [
-      "Melakukan audit energi untuk 15+ gedung komersial dan industri",
-      "Merancang sistem instalasi dan proteksi untuk berbagai skala beban",
-      "Menyusun gambar single line diagram dan panel schedule",
+      "Melaksanakan maintenance kelistrikan industri melalui rotasi tim electrical, mechanical, dan utility untuk menjaga keandalan produksi.",
+      "Melakukan wiring panel, sistem starter motor, serta troubleshooting, termasuk perakitan panel kontrol motor 3-phase DOL untuk operasional.",
+      "Menangani instalasi, pengujian, dan commissioning sistem listrik secara mandiri dengan validasi teknisi senior sebelum digunakan.",
+      "Melakukan inspeksi, perawatan, dan analisis kerusakan peralatan industri menggunakan alat ukur listrik serta dokumentasi teknis.",
     ],
   },
   {
@@ -75,9 +76,10 @@ const experiences = [
     period: "Jul 2021 — Oct 2021",
     location: "Simalungun, Indonesia",
     points: [
-      "Riset klasifikasi gangguan kualitas daya menggunakan CNN",
-      "Publikasi 2 paper pada jurnal nasional terakreditasi",
-      "Mengembangkan testbed pengujian algoritma MPPT panel surya",
+      "Memberikan dukungan IT harian untuk troubleshooting hardware, Windows, software kantor, printer, CCTV, dan jaringan dasar",
+      "Mendukung operasional ERP sebagai user support, termasuk instalasi client dan input data sesuai standar bisnis.",
+      "Melakukan maintenance jaringan LAN sederhana seperti pengecekan kabel, konektivitas, dan konfigurasi IP.",
+      "Mengembangkan prototype sistem absensi berbasis web dengan Laravel, Bootstrap, dan MySQL untuk pembelajaran sistem internal.",
     ],
   },
 ];

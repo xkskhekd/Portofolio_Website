@@ -52,11 +52,27 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1500));
+  e.preventDefault();
+  setStatus("sending");
+
+  const response = await fetch("https://formspree.io/f/xkoqkaqa", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      message: form.message,
+    }),
+  });
+
+  if (response.ok) {
     setStatus("sent");
-  };
+    setForm({ name: "", email: "", message: "" });
+  } else {
+    setStatus("idle");
+    alert("Gagal mengirim. Coba lagi.");
+  }
+};
 
   return (
     <SectionWrapper id="contact">
@@ -97,7 +113,7 @@ export default function Contact() {
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <a href="mailto:fathiannaqi3@gmail.com" target="_blank" rel="noopener noreferrer" style={cardStyle}>
+            <a href="https://mail.google.com/mail/?view=cm&to=fathiannaqi3@gmail.com" target="_blank" rel="noopener noreferrer" style={cardStyle}>
               <div style={iconBoxStyle}>
                 <Mail size={16} color="#22C55E" />
               </div>
@@ -125,6 +141,19 @@ export default function Contact() {
                 <p style={{ fontSize: "11px", color: "#6B7280", marginBottom: "2px" }}>GitHub</p>
                 <p style={{ fontSize: "14px", color: "#EAEAEA" }}>xkskhekd</p>
               </div>
+            </a>
+            <a href="https://www.instagram.com/xkskhekd/" target="_blank" rel="noopener noreferrer" style={cardStyle}>
+                <div style={iconBoxStyle}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="#22C55E" stroke="none"/>
+                    </svg>
+                </div>
+                <div>
+                    <p style={{ fontSize: "11px", color: "#6B7280", marginBottom: "2px" }}>Instagram</p>
+                    <p style={{ fontSize: "14px", color: "#EAEAEA" }}>xkskhekd</p>
+                </div>
             </a>
           </div>
         </div>
@@ -166,7 +195,7 @@ export default function Contact() {
             <div>
               <label style={labelStyle}>Pesan</label>
               <textarea
-                placeholder="Ceritakan proyek atau kolaborasi yang ingin Anda bahas..."
+                placeholder="Ceritakan proyek atau apapun yang ingin Anda bahas..."
                 value={form.message}
                 required
                 rows={6}

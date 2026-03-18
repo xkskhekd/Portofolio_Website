@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import clsx from "clsx";
 
 const navItems = [
   { label: "Proyek", href: "#projects" },
@@ -23,46 +22,53 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    const id = href.replace("#", "");
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={clsx(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          scrolled
-            ? "bg-background/90 backdrop-blur-md border-b border-white/5"
-            : "bg-transparent"
-        )}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          transition: "all 0.3s",
+          background: scrolled ? "rgba(11,11,11,0.92)" : "transparent",
+          backdropFilter: scrolled ? "blur(12px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.05)" : "none",
+        }}
       >
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 10px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
-          <Link href="/" className="font-heading font-bold text-lg tracking-tight">
-            <span className="text-accent">&lt;</span>
-            <span className="text-text">xkskhekd</span>
-            <span className="text-accent">/&gt;</span>
+        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 80px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "18px", fontWeight: 700, letterSpacing: "-0.02em" }}>
+              <span style={{ color: "#22C55E" }}>&lt;</span>
+              <span style={{ color: "#EAEAEA" }}>xkskhekd</span>
+              <span style={{ color: "#22C55E" }}>/&gt;</span>
+            </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div style={{ display: "flex", alignItems: "center", gap: "32px" }} className="desktop-nav">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-body text-text-dim hover:text-accent transition-colors duration-200"
-              >
+              <a key={item.href} href={item.href} onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }} style={{ fontSize: "14px", color: "#9CA3AF", textDecoration: "none", cursor: "pointer" }} onMouseEnter={(e) => { e.currentTarget.style.color = "#22C55E"; }} onMouseLeave={(e) => { e.currentTarget.style.color = "#9CA3AF"; }}>
                 {item.label}
-              </Link>
+              </a>
             ))}
-            <a href="/cv.pdf" download className="flex items-center gap-1 text-sm font-body bg-accent/10 border border-accent/30 text-accent px-4 py-2 rounded hover:bg-accent/20 transition-all duration-200">
+            <a href="/cv.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#22C55E", background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: "8px", padding: "8px 20px", textDecoration: "none" }}>
               <Download size={14} />
               Download CV
             </a>
           </div>
 
-          <button
-            className="md:hidden text-text-dim hover:text-text transition-colors"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+          <button onClick={() => setMenuOpen(!menuOpen)} style={{ display: "none", background: "none", border: "none", color: "#9CA3AF", cursor: "pointer" }} className="mobile-btn">
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -71,24 +77,19 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed top-16 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-b border-white/5 md:hidden"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            style={{ position: "fixed", top: "64px", left: 0, right: 0, zIndex: 40, background: "rgba(20,20,20,0.97)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)", padding: "16px 24px 24px" }}
           >
-            <div className="flex flex-col px-6 py-4 gap-4">
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-text-dim hover:text-accent transition-colors py-2 border-b border-white/5 last:border-0"
-                  onClick={() => setMenuOpen(false)}
-                >
+                <a key={item.href} href={item.href} onClick={(e) => { e.preventDefault(); handleNavClick(item.href); }} style={{ fontSize: "15px", color: "#9CA3AF", textDecoration: "none", padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.05)", cursor: "pointer" }}>
                   {item.label}
-                </Link>
+                </a>
               ))}
-              <a href="/cv.pdf" download className="flex items-center gap-2 text-accent text-sm py-2">
+              <a href="/cv.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "14px", color: "#22C55E", textDecoration: "none", paddingTop: "4px" }}>
                 <Download size={14} />
                 Download CV
               </a>
@@ -96,6 +97,13 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+          .mobile-btn { display: block !important; }
+        }
+      `}</style>
     </>
   );
 }

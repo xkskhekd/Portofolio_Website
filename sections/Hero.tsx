@@ -2,17 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download, ArrowDown } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
-
-const skills = [
-  "Power Systems",
-  "Machine Learning",
-  "Embedded Systems",
-  "Regression Analysis",
-  "ESP32/Arduino",
-  "Programming",
-];
 
 export default function Hero() {
   return (
@@ -49,22 +39,21 @@ export default function Hero() {
         pointerEvents: "none",
       }} />
 
-      {/* 2 kolom: teks kiri, foto kanan */}
+      {/* 2 kolom */}
       <div style={{
         maxWidth: "1152px",
         margin: "0 auto",
         width: "100%",
         display: "grid",
-        gridTemplateColumns: "1fr auto",
-        gap: "25px",
+        gridTemplateColumns: "1fr 340px",
+        gap: "48px",
         alignItems: "center",
         position: "relative",
         zIndex: 1,
       }}>
 
-        {/* Kolom kiri: teks */}
+        {/* Kolom kiri */}
         <div>
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,68 +74,124 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          {/* Intro */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0, duration: 0.7 }}
+            style={{
+              fontSize: "14px",
+              color: "#FFFFFF",
+              fontFamily: "monospace",
+              marginBottom: "20px",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Hello World, Saya Fathi Annaqi
+          </motion.p>
+
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.7 }}
             style={{
               fontFamily: "var(--font-space-grotesk), sans-serif",
-              fontSize: "clamp(20px, 3.5vw, 72px)",
+              fontSize: "clamp(28px, 3.5vw, 52px)",
               fontWeight: 700,
-              lineHeight: 1.05,
+              lineHeight: 1.0,
               letterSpacing: "-0.02em",
-              marginBottom: "24px",
+              marginBottom: "0px",
             }}
           >
             <span style={{ color: "#EAEAEA" }}>Electrical Engineer</span>
             <br />
-            <span style={{ color: "#EAEAEA" }}>applying </span>
-            <span style={{ color: "#22C55E" }}>Machine Learning</span>
-            <br />
-            <span style={{ color: "#9CA3AF", fontSize: "clamp(2px, 1.7vw, 48px)", fontWeight: 500 }}>
-              to real-world engineering systems
+            <span style={{ color: "#9CA3AF", fontWeight: 500, fontSize: "clamp(20px, 1.8vw, 40px)" }}>
+              yang juga ngutak-ngatik
             </span>
+            <br />
+            <span style={{ color: "#22C55E" }}>Machine Learning</span>
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Bio */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            style={{ fontSize: "15px", color: "#9CA3AF", maxWidth: "520px", lineHeight: 1.7, marginBottom: "32px" }}
+            style={{
+              fontSize: "12px",
+              color: "#9CA3AF",
+              maxWidth: "480px",
+              lineHeight: 1.8,
+              marginBottom: "32px",
+              marginTop: "20px",
+            }}
           >
-            Saya merancang sistem yang menggabungkan rekayasa kelistrikan dengan
-            kecerdasan data — dari infrastruktur daya hingga embedded intelligence.
+            Saya suka membangun sistem yang benar-benar bekerja — dari panel listrik
+            sampai model prediksi. Sedang menyelesaikan studi Teknik Elektro sambil
+            aktif di dunia AI dan embedded systems.
           </motion.p>
 
-          {/* Skill chips */}
+          {/* Skills */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45, duration: 0.7 }}
-            style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "40px" }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "36px" }}
           >
-            {skills.map((skill) => (
-              <span key={skill} className="skill-chip">{skill}</span>
+            {["Power Systems", "Machine Learning", "Embedded Systems", "ESP32/Arduino", "Python"].map((skill) => (
+              <span key={skill} style={{
+                fontSize: "12px",
+                color: "#6B7280",
+                border: "1px solid rgba(255,255,255,0.07)",
+                padding: "4px 10px",
+                borderRadius: "6px",
+                fontFamily: "monospace",
+              }}>
+                {skill}
+              </span>
             ))}
           </motion.div>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+            style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}
           >
-            <a href="/cv.pdf" download className="btn-primary">
-              <Download size={16} />
+            <a href="/cv.pdf" download style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              fontSize: "14px",
+              color: "#0B0B0B",
+              background: "#22C55E",
+              padding: "10px 20px",
+              borderRadius: "8px",
+              textDecoration: "none",
+              fontWeight: 600,
+            }}>
+              <Download size={15} />
               Download CV
             </a>
-            <Link href="#projects" className="btn-secondary">
-              Lihat Proyek
-              <ArrowDown size={16} />
-            </Link>
+            <a href="#projects" onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                fontSize: "14px",
+                color: "#6B7280",
+                textDecoration: "none",
+                padding: "10px 4px",
+                cursor: "pointer",
+              }}>
+              Lihat proyek saya
+              <ArrowDown size={14} />
+            </a>
           </motion.div>
         </div>
 
@@ -162,7 +207,6 @@ export default function Hero() {
             flexShrink: 0,
           }}
         >
-          {/* Glow di belakang foto */}
           <div style={{
             position: "absolute",
             inset: "-20px",
@@ -171,7 +215,6 @@ export default function Hero() {
             pointerEvents: "none",
           }} />
 
-          {/* Border dekoratif */}
           <div style={{
             position: "absolute",
             inset: 0,
@@ -180,7 +223,6 @@ export default function Hero() {
             zIndex: 0,
           }} />
 
-          {/* Foto */}
           <Image
             src="/images/photo.png"
             alt="Profile Photo"
@@ -193,7 +235,6 @@ export default function Hero() {
             }}
           />
 
-          {/* Gradient fade bawah supaya menyatu dengan background */}
           <div style={{
             position: "absolute",
             bottom: 0,
@@ -205,7 +246,6 @@ export default function Hero() {
             zIndex: 1,
           }} />
 
-          {/* Badge floating */}
           <div style={{
             position: "absolute",
             bottom: "24px",

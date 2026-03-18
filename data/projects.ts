@@ -16,64 +16,64 @@ export type Project = {
 export const projects: Project[] = [
   // ===== ELECTRICAL ENGINEERING =====
   {
-    slug: "power-distribution-monitoring",
-    title: "Sistem Monitoring Distribusi Daya",
+    slug: "disaster-relief-solar-power-system",
+    title: "Disaster Relief Solar Power System Deployment",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Sistem real-time untuk memantau kualitas daya pada jaringan distribusi listrik 20kV menggunakan mikrokontroler dan protokol Modbus.",
-    tech: ["STM32", "Modbus RTU", "Python", "InfluxDB", "Grafana"],
-    result: "Deteksi anomali daya 40% lebih cepat, downtime berkurang 25%",
+      "Perancangan dan implementasi sistem energi surya off-grid di Desa Geunci, Sawang, untuk menyediakan listrik dasar seperti penerangan dan pengisian perangkat saat jaringan PLN tidak tersedia.",
+    tech: ["Panel Surya (2x 100 WP)", "Baterai VRLA (12V 100Ah)", "Solar Charge Controller (PWM)", "Inverter 500W", "MCB Proteksi (AC 2A, DC 20A)", "Distribusi Beban Manual"],
+    result: "Berhasil menyediakan listrik untuk kebutuhan dasar warga di area bencana, membantu aktivitas selama masa pemulihan sebelum listrik utama kembali.",
     overview:
-      "Proyek ini dirancang untuk memantau kualitas daya secara real-time pada infrastruktur distribusi 20kV. Data dikumpulkan setiap 500ms dan dikirim ke server pusat untuk analisis.",
+      "Sistem tenaga surya semi-portabel yang dideploy di area pasca banjir untuk menyediakan listrik sementara bagi masyarakat terdampak yang kehilangan akses ke jaringan listrik.",
     problem:
-      "Gangguan kualitas daya (tegangan drop, harmonik) sering tidak terdeteksi sampai terjadi kerusakan peralatan yang memakan biaya besar.",
+      "Pasca banjir, wilayah mengalami pemadaman listrik total sehingga warga tidak memiliki akses listrik untuk kebutuhan dasar.",
     approach:
-      "Menggunakan sensor CT dan PT yang terhubung ke STM32 sebagai ADC presisi tinggi. Data dikirim via Modbus RTU ke gateway Raspberry Pi, kemudian disimpan di InfluxDB.",
+      "Membangun sistem tenaga surya semi-portabel yang mudah dipasang dan dapat langsung digunakan di kondisi lapangan terbatas.",
     implementation:
-      "Firmware STM32 ditulis dalam C dengan sampling rate 2kHz. Script Python menangani komunikasi Modbus dan preprocessing data. Dashboard Grafana menampilkan metrik real-time.",
+      "Sistem menggunakan 2 panel 100Wp yang terhubung ke baterai VRLA melalui PWM SCC, dengan inverter 500W untuk output AC dan proteksi MCB. Instalasi dilakukan langsung di lokasi dengan penyesuaian posisi panel sesuai kondisi lapangan.",
     outcome:
-      "Sistem berhasil diimplementasikan di 3 gardu distribusi. Anomali tegangan terdeteksi rata-rata 40% lebih cepat dibanding inspeksi manual.",
+      "Sistem berhasil menyediakan sumber listrik stabil untuk penerangan dan pengisian perangkat, serta meningkatkan kondisi operasional di posko bencana.",
   },
   {
-    slug: "solar-mppt-controller",
-    title: "MPPT Controller Panel Surya",
+    slug: "37kw-3phase-dol-motor-control-panel-cpo",
+    title: "3-Phase 37 kW Induction Motor DOL Control Panel for CPO Pump System",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Perancangan dan implementasi Maximum Power Point Tracking controller untuk sistem panel surya off-grid 5kWp dengan efisiensi konversi tinggi.",
-    tech: ["Arduino", "Buck Converter", "MATLAB/Simulink", "PCB Design", "Altium"],
-    result: "Efisiensi MPPT mencapai 97.3%, output daya meningkat 18% vs fixed voltage",
+      "Panel kontrol dirakit menggunakan metode Direct-On-Line (DOL) dengan sistem modular drawer untuk memudahkan instalasi dan maintenance. Dilengkapi kontrol manual, indikator, dan emergency stop untuk keamanan operasional.",
+    tech: ["Motor Induksi 3 Fasa (37 kW, 400V)", "Magnetic Contactor", "Circuit Breaker (CB)", "Relay Kontrol", "Push Button (Start / Stop / Emergency)", "Lampu Indikator", "Panel Modular Drawer System", "Alat Ukur (Monitoring)"],
+    result: "Sistem kontrol berfungsi sesuai kebutuhan dan mendukung operasional pompa CPO. Motor berjalan stabil dengan kontrol yang mudah dioperasikan dan dipelihara.",
     overview:
-      "MPPT Controller yang dirancang untuk memaksimalkan ekstraksi daya dari panel surya pada kondisi irradiance yang berubah-ubah.",
+      "Perakitan panel kontrol motor induksi 3 fasa 37 kW menggunakan metode Direct-On-Line (DOL) untuk sistem pompa CPO di lingkungan industri.",
     problem:
-      "Controller konvensional menggunakan tegangan tetap yang menyebabkan kehilangan daya hingga 20% pada kondisi awan bergerak.",
+      "Dibutuhkan sistem kontrol motor berdaya besar (37 kW) untuk pompa CPO yang dapat dioperasikan secara langsung, dengan tetap mempertahankan keandalan dan kemudahan maintenance dalam lingkungan industri.",
     approach:
-      "Implementasi algoritma Perturb & Observe (P&O) yang dioptimasi dengan adaptive step size untuk konvergensi lebih cepat pada kondisi dinamis.",
+      "Menggunakan metode Direct-On-Line (DOL) sesuai requirement industri, dengan pendekatan modular melalui sistem drawer untuk meningkatkan efisiensi instalasi dan kemudahan perawatan.",
     implementation:
-      "Buck converter dirancang dengan frekuensi switching 100kHz menggunakan MOSFET IRFZ44N. Kontroler berbasis Arduino Due dengan resolusi ADC 12-bit.",
+      "Perakitan panel, wiring, dan testing berdasarkan desain yang diberikan, termasuk troubleshooting saat terjadi kesalahan wiring dan trip.",
     outcome:
-      "Efisiensi tracking rata-rata 97.3% selama pengujian 30 hari. Output energi meningkat 18% dibanding sistem fixed voltage pada lokasi uji.",
+      "Panel digunakan langsung di industri dan motor berjalan stabil.",
   },
   {
-    slug: "greg",
-    title: "MPPTergreg Panel Surya",
+    slug: "multi-source-energy-harvesting-sync-esp32",
+    title: "Multi-Source Energy Harvesting Synchronization System (5V DC, ESP32)",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Perancafdsggi.",
-    tech: ["Arduino", "Buck Converter", "MATLAB/Simulink", "PCB Design", "Altium"],
-    result: "Efisiensi MPPT mencapai 97.3%, output daya meningkat 18% vs fixed voltage",
+      "Proyek ini berfokus pada integrasi dan sinkronisasi multi-source energy menjadi satu power bus 5V DC. Sistem menggabungkan sumber dengan karakteristik berbeda melalui proses rectifikasi, konversi, dan kontrol switching untuk menghasilkan output yang dapat digunakan.",
+    tech: ["ESP32", "DC-DC Converter", "Rectifier", "MPPT/Buck Converter", "Li-ion Battery", "Switching Control"],
+    result: "Output masih fluktuatif namun sudah usable dan menunjukkan potensi untuk pengembangan lebih lanjut.",
     overview:
-      "MPPT Consfhbah.",
+      "Sinkronisasi tiga sumber energi (piezo, photovoltaic, pico hydro) menjadi output DC 5V menggunakan sistem kontrol berbasis ESP32.",
     problem:
-      "Controller konvensionsfdh tegangan tetap yang menyebabkan kehilangan daya hingga 20% pada kondisi awan bergerak.",
+      "Perbedaan karakteristik sumber (AC/DC, fluktuatif, intermittent) menyebabkan konflik antar sumber, reverse current, dan ketidakstabilan tegangan.",
     approach:
-      "Implementasi algoritma Pertshdfve (P&O) yang dioptimasi dengan adaptive step size untuk konvergensi lebih cepat pada kondisi dinamis.",
+      "Menstandarkan semua sumber ke DC, lalu mengatur aliran energi menggunakan converter dan kontrol switching berbasis ESP32 untuk menjaga kestabilan sistem.",
     implementation:
-      "Buck convertesfhit.",
+      "Mengintegrasikan piezo, photovoltaic, dan pico hydro ke dalam satu power bus melalui rangkaian rectifier dan DC-DC converter. Sistem dikontrol menggunakan ESP32 untuk mengatur switching on/off tiap sumber.Dilakukan troubleshooting terhadap masalah seperti drop tegangan, konflik antar sumber, dan reverse current selama proses pengujian.",
     outcome:
-      "Efisiensi tsfhduji.",
+      "Sistem berhasil menggabungkan beberapa sumber energi menjadi satu output 5V DC yang dapat digunakan untuk menyalakan perangkat.",
   },
   
 

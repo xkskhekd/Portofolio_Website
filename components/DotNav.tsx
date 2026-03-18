@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import clsx from "clsx";
 
 const sections = [
   { id: "hero", label: "Hero" },
-  { id: "approach", label: "Pendekatan" },
+//   { id: "approach", label: "Pendekatan" },
   { id: "projects", label: "Proyek" },
   { id: "experience", label: "Pengalaman" },
   { id: "about", label: "Tentang" },
@@ -16,47 +15,62 @@ export default function DotNav() {
   const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const observers = sections.map(({ id }) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
+    const handleScroll = () => {
+      const scrollY = window.scrollY + window.innerHeight / 2;
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActive(id);
-        },
-        { threshold: 0.5 }
-      );
-      observer.observe(el);
-      return observer;
-    });
-
-    return () => {
-      observers.forEach((obs) => obs?.disconnect());
+      for (const { id } of sections) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+        if (scrollY >= top && scrollY < bottom) {
+          setActive(id);
+          break;
+        }
+      }
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3">
+    <div style={{
+      position: "fixed",
+      right: "24px",
+      top: "50%",
+      transform: "translateY(-50%)",
+      zIndex: 40,
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+    }}>
       {sections.map(({ id, label }) => (
         <button
           key={id}
           onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
           title={label}
-          className="group relative flex items-center justify-end"
+          style={{
+            position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "4px 0",
+          }}
         >
-          {/* Tooltip */}
-          <span className="absolute right-6 bg-surface border border-white/10 text-text-dim text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-            {label}
-          </span>
-          {/* Dot */}
-          <span
-            className={clsx(
-              "block rounded-full transition-all duration-300",
-              active === id
-                ? "w-2.5 h-2.5 bg-accent"
-                : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
-            )}
-          />
+          <span style={{
+            display: "block",
+            borderRadius: "50%",
+            transition: "all 0.3s",
+            width: active === id ? "10px" : "6px",
+            height: active === id ? "10px" : "6px",
+            background: active === id ? "#22C55E" : "rgba(255,255,255,0.2)",
+            boxShadow: active === id ? "0 0 8px rgba(34,197,94,0.6)" : "none",
+          }} />
         </button>
       ))}
     </div>
