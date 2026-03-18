@@ -14,7 +14,7 @@ export default function Home() {
       <DotNav />
       <main>
         <Hero />
-        <Approach />
+        {/* <Approach /> */}
         <Projects />
         <Experience />
         <About />
@@ -25,10 +25,10 @@ export default function Home() {
       <footer className="py-8 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-muted text-sm font-body">
-            © 2024 Nama Anda · Built with Next.js & Tailwind
+            © 2026 Fathi Annaqi · Built with Next.js & Tailwind
           </p>
           <p className="text-muted text-xs font-mono">
-            EE + ML Engineer
+            Electrical Engineer + Machine Learning
           </p>
         </div>
       </footer>

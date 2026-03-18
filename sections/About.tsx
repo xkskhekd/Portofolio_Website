@@ -5,25 +5,32 @@ import SectionWrapper from "@/components/SectionWrapper";
 
 const skills: Record<string, string[]> = {
   "Electrical Engineering": [
-    "Power Systems", "Power Electronics", "Protection & Relay",
-    "PLC Programming", "SCADA/HMI", "Panel Design",
+    "Power Systems", "Protection & Relay", "Arduino/ESP32",
+    "Renewable Energy", "Harvest Energy", "Embedded Systems",
   ],
   "Machine Learning": [
     "TensorFlow", "PyTorch", "scikit-learn",
-    "Time Series Analysis", "Signal Processing", "Anomaly Detection",
+    "Time Series Analysis", "Numpy", "Pandas",
+  ],
+  "Framework & Library": [
+    "Next.Js", "React.Js", "Bootstrap",
+    "Laravel", "Tailwind",
   ],
   "Tools & Platforms": [
-    "Python", "MATLAB/Simulink", "Altium Designer",
-    "AutoCAD Electrical", "Git", "Docker",
+    "VS Code", "MATLAB/Simulink", "Unity",
+    "AutoCAD Electrical", "Github",
+  ],
+  "Design": [
+    "Photoshop", "Figma", "Blender",
   ],
 };
 
-const stats = [
-  { value: "4+", label: "Tahun Pengalaman" },
-  { value: "15+", label: "Proyek Selesai" },
-  { value: "2", label: "Publikasi" },
-  { value: "3", label: "Sertifikasi" },
-];
+// const stats = [
+//   { value: "4+", label: "Tahun Pengalaman" },
+//   { value: "15+", label: "Proyek Selesai" },
+//   { value: "2", label: "Publikasi" },
+//   { value: "3", label: "Sertifikasi" },
+// ];
 
 export default function About() {
   return (
@@ -74,8 +81,8 @@ export default function About() {
               marginTop: "32px",
             }}
           >
-            {stats.map(({ value, label }) => (
-              <div
+            {/* {stats.map(({ value, label }) => ( */}
+              {/* <div
                 key={label}
                 style={{
                   textAlign: "center",
@@ -98,7 +105,7 @@ export default function About() {
                 </p>
                 <p style={{ fontSize: "11px", color: "#9CA3AF" }}>{label}</p>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
 

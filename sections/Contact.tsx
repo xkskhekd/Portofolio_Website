@@ -97,33 +97,33 @@ export default function Contact() {
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <a href="mailto:engineer@email.com" target="_blank" rel="noopener noreferrer" style={cardStyle}>
+            <a href="mailto:fathiannaqi3@gmail.com" target="_blank" rel="noopener noreferrer" style={cardStyle}>
               <div style={iconBoxStyle}>
                 <Mail size={16} color="#22C55E" />
               </div>
               <div>
                 <p style={{ fontSize: "11px", color: "#6B7280", marginBottom: "2px" }}>Email</p>
-                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>engineer@email.com</p>
+                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>fathiannaqi3@gmail.com</p>
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" style={cardStyle}>
+            <a href="https://www.linkedin.com/in/fathi-annaqi-205a2a222/" target="_blank" rel="noopener noreferrer" style={cardStyle}>
               <div style={iconBoxStyle}>
                 <Linkedin size={16} color="#22C55E" />
               </div>
               <div>
                 <p style={{ fontSize: "11px", color: "#6B7280", marginBottom: "2px" }}>LinkedIn</p>
-                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>linkedin.com/in/username</p>
+                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>Fathi Annaqi</p>
               </div>
             </a>
 
-            <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" style={cardStyle}>
+            <a href="https://github.com/xkskhekd" target="_blank" rel="noopener noreferrer" style={cardStyle}>
               <div style={iconBoxStyle}>
                 <Github size={16} color="#22C55E" />
               </div>
               <div>
                 <p style={{ fontSize: "11px", color: "#6B7280", marginBottom: "2px" }}>GitHub</p>
-                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>github.com/username</p>
+                <p style={{ fontSize: "14px", color: "#EAEAEA" }}>xkskhekd</p>
               </div>
             </a>
           </div>

@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
 
 const navItems = [
-  { label: "Tentang", href: "#about" },
-  { label: "Pengalaman", href: "#experience" },
   { label: "Proyek", href: "#projects" },
+  { label: "Pengalaman", href: "#experience" },
+  { label: "Tentang", href: "#about" },
   { label: "Kontak", href: "#contact" },
 ];
 
@@ -36,15 +36,13 @@ export default function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
+        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 10px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
           <Link href="/" className="font-heading font-bold text-lg tracking-tight">
             <span className="text-accent">&lt;</span>
-            <span className="text-text">EE</span>
+            <span className="text-text">xkskhekd</span>
             <span className="text-accent">/&gt;</span>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
@@ -55,17 +53,12 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
-            <a
-              href="/cv.pdf"
-              download
-              className="flex items-center gap-2 text-sm font-body bg-accent/10 border border-accent/30 text-accent px-4 py-2 rounded hover:bg-accent/20 transition-all duration-200"
-            >
+            <a href="/cv.pdf" download className="flex items-center gap-1 text-sm font-body bg-accent/10 border border-accent/30 text-accent px-4 py-2 rounded hover:bg-accent/20 transition-all duration-200">
               <Download size={14} />
               Download CV
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-text-dim hover:text-text transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -75,7 +68,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -96,11 +88,7 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href="/cv.pdf"
-                download
-                className="flex items-center gap-2 text-accent text-sm py-2"
-              >
+              <a href="/cv.pdf" download className="flex items-center gap-2 text-accent text-sm py-2">
                 <Download size={14} />
                 Download CV
               </a>

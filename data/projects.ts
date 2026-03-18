@@ -55,6 +55,27 @@ export const projects: Project[] = [
     outcome:
       "Efisiensi tracking rata-rata 97.3% selama pengujian 30 hari. Output energi meningkat 18% dibanding sistem fixed voltage pada lokasi uji.",
   },
+  {
+    slug: "greg",
+    title: "MPPTergreg Panel Surya",
+    category: "electrical",
+    categoryLabel: "Electrical Engineering",
+    description:
+      "Perancafdsggi.",
+    tech: ["Arduino", "Buck Converter", "MATLAB/Simulink", "PCB Design", "Altium"],
+    result: "Efisiensi MPPT mencapai 97.3%, output daya meningkat 18% vs fixed voltage",
+    overview:
+      "MPPT Consfhbah.",
+    problem:
+      "Controller konvensionsfdh tegangan tetap yang menyebabkan kehilangan daya hingga 20% pada kondisi awan bergerak.",
+    approach:
+      "Implementasi algoritma Pertshdfve (P&O) yang dioptimasi dengan adaptive step size untuk konvergensi lebih cepat pada kondisi dinamis.",
+    implementation:
+      "Buck convertesfhit.",
+    outcome:
+      "Efisiensi tsfhduji.",
+  },
+  
 
   // ===== MACHINE LEARNING =====
   {

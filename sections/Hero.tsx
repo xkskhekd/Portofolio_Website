@@ -3,14 +3,15 @@
 import { motion } from "framer-motion";
 import { Download, ArrowDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const skills = [
   "Power Systems",
   "Machine Learning",
   "Embedded Systems",
-  "Signal Processing",
-  "SCADA / HMI",
-  "Predictive Maintenance",
+  "Regression Analysis",
+  "ESP32/Arduino",
+  "Programming",
 ];
 
 export default function Hero() {
@@ -23,56 +24,54 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "80px 48px 48px",
+        padding: "80px 80px 48px",
         overflow: "hidden",
       }}
     >
       {/* Background grid */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          opacity: 0.03,
-          backgroundImage:
-            "linear-gradient(#22C55E 1px, transparent 1px), linear-gradient(90deg, #22C55E 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          pointerEvents: "none",
-        }}
-      />
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        opacity: 0.03,
+        backgroundImage: "linear-gradient(#22C55E 1px, transparent 1px), linear-gradient(90deg, #22C55E 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+        pointerEvents: "none",
+      }} />
 
       {/* Glow orb */}
-      <div
-        style={{
-          position: "absolute",
-          top: "25%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "600px",
-          height: "600px",
-          background: "radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
+      <div style={{
+        position: "absolute",
+        top: "25%",
+        right: "20%",
+        width: "500px",
+        height: "500px",
+        background: "radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%)",
+        pointerEvents: "none",
+      }} />
 
-      {/* Content */}
-      <div
-        style={{
-          maxWidth: "1152px",
-          margin: "0 auto",
-          width: "100%",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0, duration: 0.7 }}
-          style={{ marginBottom: "32px" }}
-        >
-          <div
-            style={{
+      {/* 2 kolom: teks kiri, foto kanan */}
+      <div style={{
+        maxWidth: "1152px",
+        margin: "0 auto",
+        width: "100%",
+        display: "grid",
+        gridTemplateColumns: "1fr auto",
+        gap: "25px",
+        alignItems: "center",
+        position: "relative",
+        zIndex: 1,
+      }}>
+
+        {/* Kolom kiri: teks */}
+        <div>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0, duration: 0.7 }}
+            style={{ marginBottom: "32px" }}
+          >
+            <div style={{
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
@@ -80,110 +79,152 @@ export default function Hero() {
               border: "1px solid rgba(34,197,94,0.25)",
               padding: "8px 16px",
               borderRadius: "999px",
+            }}>
+              <span style={{ width: "8px", height: "8px", background: "#22C55E", borderRadius: "50%" }} />
+              <span style={{ fontSize: "13px", color: "#22C55E" }}>Open to Opportunities</span>
+            </div>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15, duration: 0.7 }}
+            style={{
+              fontFamily: "var(--font-space-grotesk), sans-serif",
+              fontSize: "clamp(20px, 3.5vw, 72px)",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              marginBottom: "24px",
             }}
           >
-            <span
-              style={{
-                width: "8px",
-                height: "8px",
-                background: "#22C55E",
-                borderRadius: "50%",
-              }}
-            />
-            <span style={{ fontSize: "13px", color: "#22C55E" }}>
-              Open to Opportunities
+            <span style={{ color: "#EAEAEA" }}>Electrical Engineer</span>
+            <br />
+            <span style={{ color: "#EAEAEA" }}>applying </span>
+            <span style={{ color: "#22C55E" }}>Machine Learning</span>
+            <br />
+            <span style={{ color: "#9CA3AF", fontSize: "clamp(2px, 1.7vw, 48px)", fontWeight: 500 }}>
+              to real-world engineering systems
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            style={{ fontSize: "15px", color: "#9CA3AF", maxWidth: "520px", lineHeight: 1.7, marginBottom: "32px" }}
+          >
+            Saya merancang sistem yang menggabungkan rekayasa kelistrikan dengan
+            kecerdasan data — dari infrastruktur daya hingga embedded intelligence.
+          </motion.p>
+
+          {/* Skill chips */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.7 }}
+            style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "40px" }}
+          >
+            {skills.map((skill) => (
+              <span key={skill} className="skill-chip">{skill}</span>
+            ))}
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
+            style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}
+          >
+            <a href="/cv.pdf" download className="btn-primary">
+              <Download size={16} />
+              Download CV
+            </a>
+            <Link href="#projects" className="btn-secondary">
+              Lihat Proyek
+              <ArrowDown size={16} />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Kolom kanan: foto */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          style={{
+            position: "relative",
+            width: "340px",
+            height: "420px",
+            flexShrink: 0,
+          }}
+        >
+          {/* Glow di belakang foto */}
+          <div style={{
+            position: "absolute",
+            inset: "-20px",
+            background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)",
+            borderRadius: "50%",
+            pointerEvents: "none",
+          }} />
+
+          {/* Border dekoratif */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            border: "1px solid rgba(34,197,94,0.2)",
+            borderRadius: "24px",
+            zIndex: 0,
+          }} />
+
+          {/* Foto */}
+          <Image
+            src="/images/photo.png"
+            alt="Profile Photo"
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "top",
+              borderRadius: "24px",
+              filter: "grayscale(20%)",
+            }}
+          />
+
+          {/* Gradient fade bawah supaya menyatu dengan background */}
+          <div style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            height: "120px",
+            background: "linear-gradient(to top, #0B0B0B, transparent)",
+            borderRadius: "0 0 24px 24px",
+            zIndex: 1,
+          }} />
+
+          {/* Badge floating */}
+          <div style={{
+            position: "absolute",
+            bottom: "24px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(11,11,11,0.85)",
+            border: "1px solid rgba(34,197,94,0.25)",
+            backdropFilter: "blur(8px)",
+            borderRadius: "999px",
+            padding: "8px 20px",
+            zIndex: 2,
+            whiteSpace: "nowrap",
+          }}>
+            <span style={{ fontSize: "12px", color: "#22C55E", fontFamily: "monospace" }}>
+              EE + ML Engineer
             </span>
           </div>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, duration: 0.7 }}
-          style={{
-            fontFamily: "var(--font-space-grotesk), sans-serif",
-            fontSize: "clamp(40px, 7vw, 80px)",
-            fontWeight: 700,
-            lineHeight: 1.05,
-            letterSpacing: "-0.02em",
-            marginBottom: "24px",
-          }}
-        >
-          <span style={{ color: "#EAEAEA" }}>Electrical Engineer</span>
-          <br />
-          <span style={{ color: "#EAEAEA" }}>applying </span>
-          <span style={{ color: "#22C55E" }}>Machine Learning</span>
-          <br />
-          <span
-            style={{
-              color: "#9CA3AF",
-              fontSize: "clamp(28px, 5vw, 52px)",
-              fontWeight: 500,
-            }}
-          >
-            to real-world engineering systems
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-          style={{
-            fontSize: "17px",
-            color: "#9CA3AF",
-            maxWidth: "560px",
-            lineHeight: 1.7,
-            marginBottom: "32px",
-          }}
-        >
-          Saya merancang sistem yang menggabungkan rekayasa kelistrikan dengan
-          kecerdasan data — dari infrastruktur daya hingga embedded intelligence.
-        </motion.p>
-
-        {/* Skill chips */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.7 }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "8px",
-            marginBottom: "40px",
-          }}
-        >
-          {skills.map((skill) => (
-            <span key={skill} className="skill-chip">
-              {skill}
-            </span>
-          ))}
-        </motion.div>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "12px",
-            alignItems: "center",
-          }}
-        >
-          <a href="/cv.pdf" download className="btn-primary">
-            <Download size={16} />
-            Download CV
-          </a>
-
-          <Link href="#projects" className="btn-secondary">
-            Lihat Proyek
-            <ArrowDown size={16} />
-          </Link>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -202,9 +243,7 @@ export default function Hero() {
           gap: "8px",
         }}
       >
-        <span style={{ fontSize: "11px", color: "#6B7280", letterSpacing: "0.1em" }}>
-          scroll
-        </span>
+        <span style={{ fontSize: "11px", color: "#6B7280", letterSpacing: "0.1em" }}>scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
