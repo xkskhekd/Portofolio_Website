@@ -1,41 +1,67 @@
+/* app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --color-bg: #0B0B0B;
+@theme {
+  --color-background: #0B0B0B;
   --color-surface: #141414;
   --color-accent: #22C55E;
+  --color-accent-dim: #16A34A;
+  --color-muted: #6B7280;
   --color-text: #EAEAEA;
+  --color-text-dim: #9CA3AF;
+
+  --font-family-heading: var(--font-space-grotesk), sans-serif;
+  --font-family-body: var(--font-inter), sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background-color: var(--color-background); color: var(--color-text); }
 
-html {
-  scroll-behavior: smooth;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0B0B0B; }
+::-webkit-scrollbar-thumb { background: #22C55E; border-radius: 2px; }
+::selection { background: #22C55E33; color: #22C55E; }
 
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #0B0B0B;
-}
-::-webkit-scrollbar-thumb {
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: #22C55E;
-  border-radius: 2px;
+  color: #0B0B0B;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #16A34A; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #9CA3AF;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: rgba(34,197,94,0.3);
+  color: #EAEAEA;
 }
 
-/* Selection color */
-::selection {
-  background: #22C55E33;
-  color: #22C55E;
+.skill-chip {
+  font-size: 13px;
+  color: #9CA3AF;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: #141414;
+  padding: 6px 14px;
+  border-radius: 8px;
 }
