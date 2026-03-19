@@ -102,24 +102,24 @@ export const projects: Project[] = [
 
   // ===== MACHINE LEARNING =====
   {
-    slug: "predictive-maintenance-motor",
-    title: "Predictive Maintenance Motor Industri",
+    slug: "embedded-soc-estimation-random-forest-esp32",
+    title: "Embedded Battery SoC Estimation using Random Forest on ESP32",
     category: "ml",
     categoryLabel: "Machine Learning",
     description:
-      "Model ML untuk memprediksi kegagalan motor induksi berdasarkan data vibration dan thermal menggunakan LSTM dan anomaly detection.",
-    tech: ["Python", "TensorFlow", "LSTM", "scikit-learn", "MQTT", "FastAPI"],
-    result: "Akurasi prediksi 94.2%, false positive rate < 3%, penghematan biaya 35%",
+      "Proyek ini menggabungkan machine learning dan embedded system untuk mengestimasi SoC baterai secara adaptif. Model dilatih menggunakan kombinasi dataset pribadi dan publik, kemudian diimplementasikan dalam bentuk C code pada ESP32 untuk inference real-time.",
+    tech: ["ESP32", "Random Forest", "Python", "OLED Display", "Sensor Data (Voltage, Current, dll)"],
+    result: "(MAE: ~5%), (RMSE: ~6%), (R²: 0.92) Estimasi cukup akurat dan dapat digunakan dalam sistem kontrol.",
     overview:
-      "Sistem predictive maintenance berbasis ML yang menganalisis sinyal vibration dan suhu motor untuk memprediksi kegagalan sebelum terjadi.",
+      "Estimasi State of Charge (SoC) baterai Li-ion secara real-time menggunakan model Random Forest yang di-deploy pada ESP32.",
     problem:
-      "Maintenance terjadwal (preventive) terlalu mahal dan sering tidak tepat waktu, sementara breakdown mendadak menghentikan produksi.",
+      "Estimasi SoC sulit dilakukan secara akurat karena data bersifat non-linear, noisy, dan bergantung pada banyak parameter.",
     approach:
-      "LSTM digunakan untuk menangkap pola temporal dalam data sensor. Feature engineering meliputi FFT decomposition, RMS, kurtosis, dan crest factor.",
+      "Menggunakan model Random Forest untuk menangani hubungan non-linear, lalu mengintegrasikan hasil model ke dalam sistem embedded untuk estimasi real-time.",
     implementation:
-      "Data dikumpulkan via accelerometer MPU6050 dan sensor suhu DS18B20. Model LSTM dengan 2 layer (64 units each) dilatih pada 6 bulan data historis.",
+      "Melakukan pengumpulan dan penggabungan dataset (~5k data), preprocessing, serta training model di Python. Model kemudian dikonversi ke C code dan di-deploy ke ESP32 untuk inference real-time, dengan output ditampilkan dalam bentuk persentase SoC pada OLED display.Dilakukan penanganan terhadap masalah overfitting, noise data, dan keterbatasan resource pada ESP32 selama proses pengembangan.",
     outcome:
-      "Deployed pada 12 motor di fasilitas manufaktur. Berhasil memprediksi 8 dari 9 kegagalan dalam periode validasi 3 bulan.",
+      "Sistem mampu melakukan estimasi SoC secara real-time dengan performa yang cukup stabil di perangkat embedded.",
     images: [
       "/images/projects/predictive-maintenance-1.jpg",
       "/images/projects/predictive-maintenance-2.jpg",
@@ -129,24 +129,51 @@ export const projects: Project[] = [
     publishedAt: "2023",
   },
   {
-    slug: "power-quality-classifier",
-    title: "Klasifikasi Gangguan Kualitas Daya dengan CNN",
+    slug: "energy-consumption-prediction-xgboost",
+    title: "Household Energy Consumption Prediction using XGBoost",
     category: "ml",
     categoryLabel: "Machine Learning",
     description:
-      "Sistem klasifikasi otomatis gangguan kualitas daya (harmonik, sag, swell, interupsi) menggunakan Convolutional Neural Network pada sinyal waveform.",
-    tech: ["Python", "PyTorch", "CNN", "Wavelet Transform", "NumPy", "Matplotlib"],
-    result: "Akurasi klasifikasi 96.8% untuk 7 jenis gangguan, inference time < 50ms",
+      "Proyek ini berfokus pada prediksi konsumsi energi harian menggunakan dataset publik (~140k data) yang berisi histori konsumsi per jam dan timestamp. Model dibangun menggunakan XGBoost untuk menangani pola konsumsi yang bersifat temporal.",
+    tech: ["XGBoost", "Python", "Pandas", "Scikit-learn", "Streamlit Dashboard", "Matplotlib"],
+    result: "(MAE: 34544), (RMSE: 47112). (R²: 0.82) Model mampu menangkap pola konsumsi dengan baik, namun masih memiliki keterbatasan akurasi akibat minimnya fitur.",
     overview:
-      "Model CNN yang mengklasifikasikan jenis gangguan kualitas daya secara otomatis dari sinyal gelombang tegangan/arus.",
+      "Prediksi konsumsi energi rumah tangga per hari menggunakan model regresi XGBoost berbasis data historis.",
     problem:
-      "Identifikasi manual gangguan power quality membutuhkan engineer berpengalaman dan memakan waktu lama, sementara gangguan dapat terjadi dalam milidetik.",
+      "Prediksi konsumsi energi sulit akurat karena keterbatasan fitur dan pola penggunaan yang berubah-ubah.",
     approach:
-      "Sinyal diproses menggunakan Continuous Wavelet Transform (CWT) untuk menghasilkan scalogram yang kemudian diklasifikasikan oleh CNN.",
+      "Menggunakan XGBoost karena performa lebih baik dibanding model lain dalam menangkap pola non-linear pada data historis konsumsi energi.",
     implementation:
-      "Dataset 10.000 sampel sinyal sintetis (IEEE 1159 standard) + data lapangan. CNN 5-layer dengan batch normalization dan dropout untuk regularisasi.",
+      "Melakukan preprocessing data time-series, training model XGBoost, serta evaluasi performa menggunakan metrik regresi. Hasil prediksi ditampilkan dalam bentuk dashboard menggunakan Streamlit.",
     outcome:
-      "Akurasi 96.8% pada test set. Model berhasil diintegrasikan ke dalam sistem monitoring distribusi sebagai modul real-time classifier.",
+      "Model mampu melakukan prediksi konsumsi energi harian, namun masih memiliki keterbatasan akurasi akibat minimnya fitur.",
+    images: [
+      "/images/projects/power-quality-1.jpg",
+      "/images/projects/power-quality-2.jpg",
+      "/images/projects/power-quality-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/power-quality-classifier",
+    publishedAt: "2023",
+  },
+  {
+    slug: "capstone",
+    title: "capstone",
+    category: "ml",
+    categoryLabel: "Machine Learning",
+    description:
+      "dfshsg",
+    tech: ["afhdf"],
+    result: "afdhadfh",
+    overview:
+      "afgdha",
+    problem:
+      "afgfdag",
+    approach:
+      "agfd",
+    implementation:
+      "fagfasfg",
+    outcome:
+      "gadget bisa hidup",
     images: [
       "/images/projects/power-quality-1.jpg",
       "/images/projects/power-quality-2.jpg",
@@ -186,6 +213,33 @@ export const projects: Project[] = [
   },
   {
     slug: "energy-audit-tool",
+    title: "Tool Audit Energi Otomatis",
+    category: "other",
+    categoryLabel: "Other Engineering",
+    description:
+      "Aplikasi web untuk otomatisasi proses audit energi gedung, mengintegrasikan data meter dengan perhitungan standar SNI dan rekomendasi efisiensi berbasis AI.",
+    tech: ["Next.js", "Python", "FastAPI", "OpenAI API", "Chart.js", "PostgreSQL"],
+    result: "Waktu audit berkurang dari 2 minggu ke 3 hari, laporan auto-generated",
+    overview:
+      "Platform digital untuk engineer yang melakukan audit energi, mengotomasi pengumpulan data, kalkulasi, dan pembuatan laporan.",
+    problem:
+      "Proses audit energi masih sangat manual — pengumpulan data spreadsheet, kalkulasi manual, dan penulisan laporan memakan waktu berminggu-minggu.",
+    approach:
+      "Data meter diinput atau diimport otomatis. Engine kalkulasi berbasis standar SNI 03-6196-2000. GPT-4 digunakan untuk menghasilkan narasi rekomendasi.",
+    implementation:
+      "Next.js frontend dengan form wizard untuk input data. FastAPI backend untuk kalkulasi intensitas energi. OpenAI API untuk generasi teks rekomendasi.",
+    outcome:
+      "Digunakan oleh tim konsultan energi untuk 5 proyek audit. Waktu pengerjaan berkurang dari rata-rata 2 minggu menjadi 3 hari.",
+    images: [
+      "/images/projects/energy-audit-1.jpg",
+      "/images/projects/energy-audit-2.jpg",
+      "/images/projects/energy-audit-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/energy-audit-tool",
+    publishedAt: "2023",
+  },
+  {
+    slug: "energyfgsdfgdsfgdfs-audit-tool",
     title: "Tool Audit Energi Otomatis",
     category: "other",
     categoryLabel: "Other Engineering",

@@ -11,21 +11,21 @@ type Category = "electrical" | "ml" | "other";
 
 const filters = [
   {
-    label: "⚡ Electrical Engineering",
+    label: "Electrical Engineering",
     value: "electrical" as Category,
     color: "#FACC15",
     activeBg: "rgba(250,204,21,0.1)",
     activeBorder: "rgba(250,204,21,0.4)",
   },
   {
-    label: "💻 Programming & ML",
+    label: "Programming & ML",
     value: "ml" as Category,
     color: "#60A5FA",
     activeBg: "rgba(96,165,250,0.1)",
     activeBorder: "rgba(96,165,250,0.4)",
   },
   {
-    label: "🔧 Other Projects",
+    label: "Other Projects",
     value: "other" as Category,
     color: "#C084FC",
     activeBg: "rgba(192,132,252,0.1)",
