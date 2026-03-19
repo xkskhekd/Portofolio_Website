@@ -11,6 +11,9 @@ export type Project = {
   approach: string;
   implementation: string;
   outcome: string;
+  images: [string, string, string];
+  projectUrl: string;
+  publishedAt: string;
 };
 
 export const projects: Project[] = [
@@ -34,6 +37,13 @@ export const projects: Project[] = [
       "Sistem menggunakan 2 panel 100Wp yang terhubung ke baterai VRLA melalui PWM SCC, dengan inverter 500W untuk output AC dan proteksi MCB. Instalasi dilakukan langsung di lokasi dengan penyesuaian posisi panel sesuai kondisi lapangan.",
     outcome:
       "Sistem berhasil menyediakan sumber listrik stabil untuk penerangan dan pengisian perangkat, serta meningkatkan kondisi operasional di posko bencana.",
+    images: [
+      "/images/projects/disaster-solar-1.jpg",
+      "/images/projects/disaster-solar-2.jpg",
+      "/images/projects/disaster-solar-3.jpg",
+    ],
+    projectUrl: "https://drive.google.com/your-link-here",
+    publishedAt: "2024",
   },
   {
     slug: "37kw-3phase-dol-motor-control-panel-cpo",
@@ -54,6 +64,13 @@ export const projects: Project[] = [
       "Perakitan panel, wiring, dan testing berdasarkan desain yang diberikan, termasuk troubleshooting saat terjadi kesalahan wiring dan trip.",
     outcome:
       "Panel digunakan langsung di industri dan motor berjalan stabil.",
+    images: [
+      "/images/projects/dol-panel-1.jpg",
+      "/images/projects/dol-panel-2.jpg",
+      "/images/projects/dol-panel-3.jpg",
+    ],
+    projectUrl: "https://drive.google.com/your-link-here",
+    publishedAt: "2024",
   },
   {
     slug: "multi-source-energy-harvesting-sync-esp32",
@@ -71,11 +88,17 @@ export const projects: Project[] = [
     approach:
       "Menstandarkan semua sumber ke DC, lalu mengatur aliran energi menggunakan converter dan kontrol switching berbasis ESP32 untuk menjaga kestabilan sistem.",
     implementation:
-      "Mengintegrasikan piezo, photovoltaic, dan pico hydro ke dalam satu power bus melalui rangkaian rectifier dan DC-DC converter. Sistem dikontrol menggunakan ESP32 untuk mengatur switching on/off tiap sumber.Dilakukan troubleshooting terhadap masalah seperti drop tegangan, konflik antar sumber, dan reverse current selama proses pengujian.",
+      "Mengintegrasikan piezo, photovoltaic, dan pico hydro ke dalam satu power bus melalui rangkaian rectifier dan DC-DC converter. Sistem dikontrol menggunakan ESP32 untuk mengatur switching on/off tiap sumber. Dilakukan troubleshooting terhadap masalah seperti drop tegangan, konflik antar sumber, dan reverse current selama proses pengujian.",
     outcome:
       "Sistem berhasil menggabungkan beberapa sumber energi menjadi satu output 5V DC yang dapat digunakan untuk menyalakan perangkat.",
+    images: [
+      "/images/projects/energy-harvesting-1.jpg",
+      "/images/projects/energy-harvesting-2.jpg",
+      "/images/projects/energy-harvesting-3.jpg",
+    ],
+    projectUrl: "https://drive.google.com/your-link-here",
+    publishedAt: "2024",
   },
-  
 
   // ===== MACHINE LEARNING =====
   {
@@ -97,6 +120,13 @@ export const projects: Project[] = [
       "Data dikumpulkan via accelerometer MPU6050 dan sensor suhu DS18B20. Model LSTM dengan 2 layer (64 units each) dilatih pada 6 bulan data historis.",
     outcome:
       "Deployed pada 12 motor di fasilitas manufaktur. Berhasil memprediksi 8 dari 9 kegagalan dalam periode validasi 3 bulan.",
+    images: [
+      "/images/projects/predictive-maintenance-1.jpg",
+      "/images/projects/predictive-maintenance-2.jpg",
+      "/images/projects/predictive-maintenance-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/predictive-maintenance",
+    publishedAt: "2023",
   },
   {
     slug: "power-quality-classifier",
@@ -117,6 +147,13 @@ export const projects: Project[] = [
       "Dataset 10.000 sampel sinyal sintetis (IEEE 1159 standard) + data lapangan. CNN 5-layer dengan batch normalization dan dropout untuk regularisasi.",
     outcome:
       "Akurasi 96.8% pada test set. Model berhasil diintegrasikan ke dalam sistem monitoring distribusi sebagai modul real-time classifier.",
+    images: [
+      "/images/projects/power-quality-1.jpg",
+      "/images/projects/power-quality-2.jpg",
+      "/images/projects/power-quality-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/power-quality-classifier",
+    publishedAt: "2023",
   },
 
   // ===== OTHER =====
@@ -139,6 +176,13 @@ export const projects: Project[] = [
       "Backend Node.js dengan library node-opcua. Frontend React dengan recharts untuk visualisasi. PostgreSQL untuk penyimpanan histori data.",
     outcome:
       "Dashboard digunakan di 2 gedung komersial. Operator dapat memantau dan mengontrol sistem dari tablet/smartphone tanpa VPN.",
+    images: [
+      "/images/projects/scada-1.jpg",
+      "/images/projects/scada-2.jpg",
+      "/images/projects/scada-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/scada-dashboard",
+    publishedAt: "2023",
   },
   {
     slug: "energy-audit-tool",
@@ -159,5 +203,12 @@ export const projects: Project[] = [
       "Next.js frontend dengan form wizard untuk input data. FastAPI backend untuk kalkulasi intensitas energi. OpenAI API untuk generasi teks rekomendasi.",
     outcome:
       "Digunakan oleh tim konsultan energi untuk 5 proyek audit. Waktu pengerjaan berkurang dari rata-rata 2 minggu menjadi 3 hari.",
+    images: [
+      "/images/projects/energy-audit-1.jpg",
+      "/images/projects/energy-audit-2.jpg",
+      "/images/projects/energy-audit-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/energy-audit-tool",
+    publishedAt: "2023",
   },
 ];

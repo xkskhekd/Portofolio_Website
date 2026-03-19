@@ -4,27 +4,28 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
 import ProjectCard from "@/components/ProjectCard";
+import MiniProjects from "@/components/MiniProjects";
 import { projects } from "@/data/projects";
 
-type Category = "electrical" | "programmer" | "other";
+type Category = "electrical" | "ml" | "other";
 
 const filters = [
   {
-    label: "Electrical Engineering",
+    label: "⚡ Electrical Engineering",
     value: "electrical" as Category,
     color: "#FACC15",
     activeBg: "rgba(250,204,21,0.1)",
     activeBorder: "rgba(250,204,21,0.4)",
   },
   {
-    label: "Programming & ML",
-    value: "programmer" as Category,
+    label: "💻 Programming & ML",
+    value: "ml" as Category,
     color: "#60A5FA",
     activeBg: "rgba(96,165,250,0.1)",
     activeBorder: "rgba(96,165,250,0.4)",
   },
   {
-    label: "Other Projects",
+    label: "🔧 Other Projects",
     value: "other" as Category,
     color: "#C084FC",
     activeBg: "rgba(192,132,252,0.1)",
@@ -37,7 +38,7 @@ export default function Projects() {
 
   const filtered = projects.filter((p) => {
     if (active === "electrical") return p.category === "electrical";
-    if (active === "programmer") return p.category === "ml";
+    if (active === "ml") return p.category === "ml";
     if (active === "other") return p.category === "other";
     return true;
   });
@@ -48,15 +49,8 @@ export default function Projects() {
         <p style={{ color: "#22C55E", fontSize: "13px", fontFamily: "monospace", marginBottom: "8px" }}>
           // proyek
         </p>
-        <h2
-          style={{
-            fontFamily: "var(--font-space-grotesk), sans-serif",
-            fontSize: "clamp(28px, 5vw, 40px)",
-            fontWeight: 700,
-            color: "#EAEAEA",
-          }}
-        >
-          Featured Projects
+        <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 700, color: "#EAEAEA" }}>
+          Projects
         </h2>
         <p style={{ color: "#9CA3AF", fontSize: "15px", marginTop: "12px", maxWidth: "480px", lineHeight: 1.65 }}>
           Proyek pilihan yang mencerminkan pendekatan teknis dan dampak nyata di lapangan.
@@ -74,9 +68,7 @@ export default function Projects() {
               fontWeight: 500,
               padding: "10px 20px",
               borderRadius: "10px",
-              border: active === f.value
-                ? `1px solid ${f.activeBorder}`
-                : "1px solid rgba(255,255,255,0.08)",
+              border: active === f.value ? `1px solid ${f.activeBorder}` : "1px solid rgba(255,255,255,0.08)",
               background: active === f.value ? f.activeBg : "#141414",
               color: active === f.value ? f.color : "#9CA3AF",
               cursor: "pointer",
@@ -88,19 +80,18 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Grid */}
+      {/* Project cards */}
       <motion.div
         layout
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "20px",
-        }}
+        style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "20px" }}
       >
         {filtered.map((project, i) => (
           <ProjectCard key={project.slug} project={project} index={i} />
         ))}
       </motion.div>
+
+      {/* Mini projects list — ikut kategori aktif */}
+      <MiniProjects activeCategory={active} />
     </SectionWrapper>
   );
 }
