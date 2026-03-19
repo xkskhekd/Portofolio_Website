@@ -62,9 +62,9 @@ export default function About() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {[
-              "Saya adalah Electrical Engineer dengan spesialisasi di sistem tenaga dan kelistrikan industri, yang secara aktif mengintegrasikan Machine Learning untuk membangun sistem yang lebih cerdas dan andal.",
-              "Perjalanan saya dimulai dari dunia power engineering klasik — merencanakan instalasi, merancang proteksi, dan memastikan keandalan sistem distribusi. Namun saya melihat gap besar: sistem kelistrikan menghasilkan data melimpah, tapi potensinya hampir tidak dimanfaatkan.",
-              "Kini saya membangun di persimpangan dua dunia itu. Menggunakan data sensor real-time, model ML, dan pemahaman mendalam tentang fisika sistem untuk menciptakan solusi yang benar-benar bekerja di lapangan, bukan hanya di kertas atau Jupyter notebook.",
+              "Saya merupakan mahasiswa Teknik Elektro dengan fokus pada renewable energy dan power system, serta memiliki ketertarikan pada penerapan machine learning dalam engineering. Saya mengembangkan pendekatan yang menggabungkan sistem energi dan kecerdasan komputasi untuk membangun solusi teknologi yang relevan ke depan.",
+              "Saya telah mengerjakan proyek seperti multi-source energy harvesting berbasis embedded system, estimasi State of Charge (SoC) baterai menggunakan machine learning di ESP32, serta deployment sistem tenaga surya untuk kebutuhan pasca bencana. Proyek ini mencerminkan kemampuan saya dalam merancang dan mengintegrasikan sistem secara nyata.",
+              "Saya terbiasa bekerja dengan pendekatan system thinking, cepat dalam problem solving, dan detail dalam pengembangan sistem. Ke depan, saya ingin mengembangkan solusi yang menggabungkan energy systems dan machine learning dalam konteks industri dan teknologi masa depan.",
             ].map((text, i) => (
               <p key={i} style={{ fontSize: "15px", color: "#9CA3AF", lineHeight: 1.75 }}>
                 {text}
