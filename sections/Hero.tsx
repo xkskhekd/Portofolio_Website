@@ -128,8 +128,12 @@ export default function Hero() {
             }}
           >
             Saya suka membangun sistem yang benar-benar bekerja — dari panel listrik
-            sampai model prediksi. Sedang menyelesaikan studi Teknik Elektro sambil
+            sampai model prediksi.
+            
+            Sedang menyelesaikan studi Teknik Elektro sambil
             aktif di dunia AI dan embedded systems.
+            <br />
+            Dan ini merupakan portofolio saya sebagai Electrical Engineer Student & Machine Learning enthusiast.
           </motion.p>
 
           {/* Skills */}

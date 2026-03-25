@@ -18,7 +18,7 @@ const filters = [
     activeBorder: "rgba(250,204,21,0.4)",
   },
   {
-    label: "Programming & ML",
+    label: "Machine Learning",
     value: "ml" as Category,
     color: "#60A5FA",
     activeBg: "rgba(96,165,250,0.1)",

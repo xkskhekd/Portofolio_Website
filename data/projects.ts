@@ -155,54 +155,27 @@ export const projects: Project[] = [
     projectUrl: "https://github.com/username/power-quality-classifier",
     publishedAt: "2023",
   },
-  {
-    slug: "capstone",
-    title: "capstone",
-    category: "ml",
-    categoryLabel: "Machine Learning",
-    description:
-      "dfshsg",
-    tech: ["afhdf"],
-    result: "afdhadfh",
-    overview:
-      "afgdha",
-    problem:
-      "afgfdag",
-    approach:
-      "agfd",
-    implementation:
-      "fagfasfg",
-    outcome:
-      "gadget bisa hidup",
-    images: [
-      "/images/projects/power-quality-1.jpg",
-      "/images/projects/power-quality-2.jpg",
-      "/images/projects/power-quality-3.jpg",
-    ],
-    projectUrl: "https://github.com/username/power-quality-classifier",
-    publishedAt: "2023",
-  },
 
   // ===== OTHER =====
   {
-    slug: "scada-dashboard",
-    title: "SCADA Dashboard Real-Time",
+    slug: "ar-3d-image-tracking-unity-vuforia",
+    title: "AR 3D Image Tracking Application using Unity & Vuforia",
     category: "other",
     categoryLabel: "Other Engineering",
     description:
-      "Dashboard SCADA berbasis web untuk monitoring dan kontrol sistem utilitas gedung menggunakan OPC-UA protocol dan React.",
-    tech: ["React", "Node.js", "OPC-UA", "WebSocket", "PostgreSQL", "Docker"],
-    result: "Response time < 200ms, mendukung 500+ data point real-time simultaneously",
+      "Proyek ini mengembangkan aplikasi AR menggunakan Unity dan Vuforia dengan pendekatan marker-based tracking. Sistem memanfaatkan QR code sebagai marker untuk memunculkan objek 3D beserta animasinya secara real-time di perangkat mobile.",
+    tech: ["Unity", "Vuforia", "C#", "Android (APK)", "Image Tracking"],
+    result: "Sistem berjalan dengan baik di perangkat Android, dengan performa tracking yang cukup stabil dalam kondisi pencahayaan yang memadai.",
     overview:
-      "Platform SCADA modern berbasis web yang menggantikan SCADA legacy untuk monitoring sistem HVAC, lighting, dan power di gedung komersial.",
+      "Aplikasi Augmented Reality berbasis Android menggunakan image tracking untuk menampilkan model 3D interaktif sebagai media edukasi.",
     problem:
-      "SCADA legacy berbasis desktop sulit diakses remote dan tidak mobile-friendly. Integrasi dengan sistem baru juga terbatas.",
+      "Tracking objek tidak selalu stabil akibat pengaruh kualitas marker dan kondisi pencahayaan, sehingga posisi dan orientasi objek 3D tidak konsisten.",
     approach:
-      "Arsitektur microservices dengan OPC-UA client di backend untuk komunikasi dengan PLC/sensor. WebSocket untuk update real-time ke frontend.",
+      "Menggunakan Vuforia image tracking dengan optimasi marker dan pengujian di berbagai kondisi pencahayaan untuk meningkatkan stabilitas tracking.",
     implementation:
-      "Backend Node.js dengan library node-opcua. Frontend React dengan recharts untuk visualisasi. PostgreSQL untuk penyimpanan histori data.",
+      "Mengembangkan aplikasi di Unity dengan integrasi Vuforia SDK untuk image tracking berbasis QR code. Sistem dirancang untuk menampilkan model 3D dengan animasi saat marker terdeteksi, serta di-build menjadi aplikasi Android (APK) yang dapat digunakan secara langsung.",
     outcome:
-      "Dashboard digunakan di 2 gedung komersial. Operator dapat memantau dan mengontrol sistem dari tablet/smartphone tanpa VPN.",
+      "Aplikasi berhasil menampilkan objek 3D dengan animasi secara real-time dan dapat digunakan sebagai media edukasi berbasis AR.",
     images: [
       "/images/projects/scada-1.jpg",
       "/images/projects/scada-2.jpg",
@@ -212,24 +185,24 @@ export const projects: Project[] = [
     publishedAt: "2023",
   },
   {
-    slug: "energy-audit-tool",
-    title: "Tool Audit Energi Otomatis",
+    slug: "3d-character-animation-blender-ar",
+    title: "3D Character Modeling & Animation for AR Application (Blender)",
     category: "other",
     categoryLabel: "Other Engineering",
     description:
-      "Aplikasi web untuk otomatisasi proses audit energi gedung, mengintegrasikan data meter dengan perhitungan standar SNI dan rekomendasi efisiensi berbasis AI.",
-    tech: ["Next.js", "Python", "FastAPI", "OpenAI API", "Chart.js", "PostgreSQL"],
-    result: "Waktu audit berkurang dari 2 minggu ke 3 hari, laporan auto-generated",
+      "Proyek ini mencakup pembuatan tiga karakter 3D bergaya semi-realistic low-poly beserta environment untuk kebutuhan aplikasi AR. Karakter dianimasikan untuk merepresentasikan skenario edukatif dan diintegrasikan langsung ke dalam aplikasi.",
+    tech: ["Blender", "Photoshop", "3D Modeling", "Rigging", "Animation"],
+    result: "Asset usable dan terintegrasi dengan baik, meskipun masih pada level dasar dari segi detail dan animasi.",
     overview:
-      "Platform digital untuk engineer yang melakukan audit energi, mengotomasi pengumpulan data, kalkulasi, dan pembuatan laporan.",
+      "Pembuatan karakter 3D beserta animasi untuk aplikasi Augmented Reality berbasis edukasi.",
     problem:
-      "Proses audit energi masih sangat manual — pengumpulan data spreadsheet, kalkulasi manual, dan penulisan laporan memakan waktu berminggu-minggu.",
+      "Proses rigging dan animasi cukup kompleks, terutama pada sinkronisasi sendi dan pergerakan agar terlihat natural.",
     approach:
-      "Data meter diinput atau diimport otomatis. Engine kalkulasi berbasis standar SNI 03-6196-2000. GPT-4 digunakan untuk menghasilkan narasi rekomendasi.",
+      "Menggunakan base model sebagai dasar, lalu melakukan modeling lanjutan, rigging, dan animasi secara manual untuk menghasilkan gerakan yang sesuai dengan kebutuhan aplikasi.",
     implementation:
-      "Next.js frontend dengan form wizard untuk input data. FastAPI backend untuk kalkulasi intensitas energi. OpenAI API untuk generasi teks rekomendasi.",
+      "Melakukan pembuatan karakter dari base model, texturing, rigging, hingga animasi (aksi dan reaksi). Asset kemudian digunakan dalam aplikasi AR sebagai bagian dari visualisasi interaktif.",
     outcome:
-      "Digunakan oleh tim konsultan energi untuk 5 proyek audit. Waktu pengerjaan berkurang dari rata-rata 2 minggu menjadi 3 hari.",
+      "Karakter 3D berhasil digunakan dalam aplikasi AR dan mampu menampilkan animasi sesuai skenario yang dirancang.",
     images: [
       "/images/projects/energy-audit-1.jpg",
       "/images/projects/energy-audit-2.jpg",
@@ -239,24 +212,24 @@ export const projects: Project[] = [
     publishedAt: "2023",
   },
   {
-    slug: "energyfgsdfgdsfgdfs-audit-tool",
-    title: "Tool Audit Energi Otomatis",
+    slug: "web-logbook-management-system",
+    title: "Web-Based Logbook Management System with PDF Reporting",
     category: "other",
     categoryLabel: "Other Engineering",
     description:
-      "Aplikasi web untuk otomatisasi proses audit energi gedung, mengintegrasikan data meter dengan perhitungan standar SNI dan rekomendasi efisiensi berbasis AI.",
-    tech: ["Next.js", "Python", "FastAPI", "OpenAI API", "Chart.js", "PostgreSQL"],
-    result: "Waktu audit berkurang dari 2 minggu ke 3 hari, laporan auto-generated",
+      "Proyek ini mengembangkan sistem logbook mingguan untuk pekerja dan peserta magang dengan dashboard admin. Sistem dirancang untuk mempermudah pencatatan kegiatan, pengelolaan data user, serta pembuatan laporan dalam format PDF.",
+    tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "mPDF"],
+    result: "Fitur utama berjalan dengan baik (input, filtering, export PDF), meskipun terdapat kendala pada tampilan PDF dan UI, serta sistem sempat mengalami masalah keamanan saat di-hosting.",
     overview:
-      "Platform digital untuk engineer yang melakukan audit energi, mengotomasi pengumpulan data, kalkulasi, dan pembuatan laporan.",
+      "Sistem logbook digital berbasis web untuk pencatatan kegiatan magang dengan fitur manajemen user, pembatasan waktu, dan export laporan PDF.",
     problem:
-      "Proses audit energi masih sangat manual — pengumpulan data spreadsheet, kalkulasi manual, dan penulisan laporan memakan waktu berminggu-minggu.",
+      "Pencatatan logbook manual tidak efisien dan sulit dikelola, serta membutuhkan sistem terstruktur dengan pembatasan waktu dan akses yang jelas.",
     approach:
-      "Data meter diinput atau diimport otomatis. Engine kalkulasi berbasis standar SNI 03-6196-2000. GPT-4 digunakan untuk menghasilkan narasi rekomendasi.",
+      "Membangun sistem berbasis web dengan role user dan admin, serta menerapkan kontrol akses berbasis waktu untuk memastikan integritas data logbook.",
     implementation:
-      "Next.js frontend dengan form wizard untuk input data. FastAPI backend untuk kalkulasi intensitas energi. OpenAI API untuk generasi teks rekomendasi.",
+      "Mengembangkan fitur input logbook mingguan dengan batas edit 7 hari, sistem penguncian otomatis, filtering berdasarkan divisi, serta export PDF menggunakan mPDF. Admin memiliki kontrol penuh terhadap data user dan logbook. Sistem diimplementasikan secara fullstack dan digunakan langsung dalam lingkungan kerja.",
     outcome:
-      "Digunakan oleh tim konsultan energi untuk 5 proyek audit. Waktu pengerjaan berkurang dari rata-rata 2 minggu menjadi 3 hari.",
+      "Sistem berhasil digunakan untuk pencatatan logbook secara digital dan membantu pengelolaan data kegiatan secara lebih terstruktur.",
     images: [
       "/images/projects/energy-audit-1.jpg",
       "/images/projects/energy-audit-2.jpg",
