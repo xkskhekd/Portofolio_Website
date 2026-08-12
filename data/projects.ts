@@ -14,114 +14,138 @@ export type Project = {
   images: [string, string, string];
   projectUrl: string;
   publishedAt: string;
+  
 };
 
 export const projects: Project[] = [
   // ===== ELECTRICAL ENGINEERING =====
   {
-    slug: "disaster-relief-solar-power-system",
-    title: "Disaster Relief Solar Power System Deployment",
+    slug: "portable-emergency-solar-power-system",
+    title: "Perancangan Sistem Energi Darurat Berbasis PLTS Portable untuk Wilayah Pascabencana",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Perancangan dan implementasi sistem energi surya off-grid di Desa Geunci, Sawang, untuk menyediakan listrik dasar seperti penerangan dan pengisian perangkat saat jaringan PLN tidak tersedia.",
-    tech: ["Panel Surya (2x 100 WP)", "Baterai VRLA (12V 100Ah)", "Solar Charge Controller (PWM)", "Inverter 500W", "MCB Proteksi (AC 2A, DC 20A)", "Distribusi Beban Manual"],
-    result: "Berhasil menyediakan listrik untuk kebutuhan dasar warga di area bencana, membantu aktivitas selama masa pemulihan sebelum listrik utama kembali.",
+      "Proyek ini merupakan implementasi sistem PLTS portable yang dikembangkan untuk mendukung kebutuhan listrik di wilayah pascabencana banjir di Desa Geunci, Sawang, Aceh. Sistem dirancang berdasarkan hasil survei lapangan, estimasi kebutuhan energi, serta keterbatasan anggaran agar mampu menyediakan sumber listrik yang aman, mudah dipindahkan, dan siap digunakan pada kondisi darurat.",
+    tech: ["Panel Surya (2x 100 WP)", "Baterai VRLA (12V 100Ah)", "Solar Charge Controller (PWM)", "Inverter 500W", "MCB Proteksi (AC 2A, DC 20A)", "Microsoft Visio"],
+    result: "Sistem PLTS portable berhasil diimplementasikan dalam waktu dua minggu menggunakan konfigurasi 200 Wp panel surya, baterai VRLA 100 Ah, dan inverter 500 W. Sistem beroperasi secara stabil di lapangan, mampu melayani kebutuhan listrik masyarakat selama lebih dari satu bulan, serta tetap andal meskipun menghadapi kondisi cuaca dan lingkungan pascabencana.",
     overview:
-      "Sistem tenaga surya semi-portabel yang dideploy di area pasca banjir untuk menyediakan listrik sementara bagi masyarakat terdampak yang kehilangan akses ke jaringan listrik.",
+      "Merancang dan membangun sistem energi darurat berbasis PLTS portable untuk menyediakan pasokan listrik sementara bagi masyarakat terdampak banjir hingga jaringan PLN kembali beroperasi.",
     problem:
-      "Pasca banjir, wilayah mengalami pemadaman listrik total sehingga warga tidak memiliki akses listrik untuk kebutuhan dasar.",
+      "Bencana banjir menyebabkan terputusnya pasokan listrik PLN selama lebih dari satu bulan sehingga aktivitas di posko, musholla, dan dapur umum menjadi sangat terbatas. Dibutuhkan sistem energi darurat yang dapat dipasang dengan cepat, aman, serta mudah dioperasikan di lapangan.",
     approach:
-      "Membangun sistem tenaga surya semi-portabel yang mudah dipasang dan dapat langsung digunakan di kondisi lapangan terbatas.",
+      "Melakukan survei kebutuhan masyarakat, mengestimasi kebutuhan energi, menentukan kapasitas sistem, memilih konfigurasi komponen berdasarkan kebutuhan dan anggaran, kemudian merancang wiring diagram, melakukan perakitan, instalasi, serta pengujian sistem sebelum digunakan masyarakat.",
     implementation:
-      "Sistem menggunakan 2 panel 100Wp yang terhubung ke baterai VRLA melalui PWM SCC, dengan inverter 500W untuk output AC dan proteksi MCB. Instalasi dilakukan langsung di lokasi dengan penyesuaian posisi panel sesuai kondisi lapangan.",
+      "Saya tergabung dalam tim riset yang bertanggung jawab menentukan kapasitas sistem, menyusun wiring diagram, membantu proses perakitan, melakukan commissioning dan pengujian menggunakan dummy load, serta memastikan sistem bekerja dengan baik melalui pengujian proses pengisian baterai dan sistem proteksi. Selain itu, saya juga melakukan sosialisasi kepada masyarakat mengenai cara pengoperasian dan perawatan dasar sistem agar dapat digunakan secara mandiri selama masa pemulihan.",
     outcome:
-      "Sistem berhasil menyediakan sumber listrik stabil untuk penerangan dan pengisian perangkat, serta meningkatkan kondisi operasional di posko bencana.",
+      "Sistem berhasil menyediakan sumber listrik sementara bagi fasilitas umum di wilayah terdampak dan digunakan hingga jaringan PLN kembali pulih. Instalasi mendukung kebutuhan dasar seperti penerangan, pengisian perangkat elektronik, serta operasional musholla dan dapur umum selama masa tanggap darurat.",
     images: [
-      "/images/projects/disaster-solar-1.jpg",
-      "/images/projects/disaster-solar-2.jpg",
-      "/images/projects/disaster-solar-3.jpg",
+      "/images/projects/DisSolar1.jpg",
+      "/images/projects/DisSolar2.jpg",
+      "/images/projects/DisSolar4.jpg",
     ],
     projectUrl: "https://drive.google.com/your-link-here",
-    publishedAt: "2024",
+    publishedAt: "2025",
   },
   {
-    slug: "37kw-3phase-dol-motor-control-panel-cpo",
-    title: "3-Phase 37 kW Induction Motor DOL Control Panel for CPO Pump System",
+    slug: "dol-induction-motor-control-panel",
+    title: "Implementasi Panel Kontrol Motor Induksi 3 Fasa Berbasis DOL untuk Feed Pump CPO",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Panel kontrol dirakit menggunakan metode Direct-On-Line (DOL) dengan sistem modular drawer untuk memudahkan instalasi dan maintenance. Dilengkapi kontrol manual, indikator, dan emergency stop untuk keamanan operasional.",
-    tech: ["Motor Induksi 3 Fasa (37 kW, 400V)", "Magnetic Contactor", "Circuit Breaker (CB)", "Relay Kontrol", "Push Button (Start / Stop / Emergency)", "Lampu Indikator", "Panel Modular Drawer System", "Alat Ukur (Monitoring)"],
-    result: "Sistem kontrol berfungsi sesuai kebutuhan dan mendukung operasional pompa CPO. Motor berjalan stabil dengan kontrol yang mudah dioperasikan dan dipelihara.",
+      "Proyek ini merupakan implementasi panel kontrol motor induksi tiga fasa berbasis DOL pada sistem feed pump di industri kelapa sawit. Seluruh proses dilakukan berdasarkan wiring diagram dan spesifikasi yang diberikan oleh engineer perusahaan, mulai dari perakitan panel, wiring, hingga pengujian sistem sebelum dioperasikan.",
+    tech: ["Motor Induksi 3 Fasa (37 kW, 400V)", "Magnetic Contactor", "Circuit Breaker (CB)", "Thermal Overload Relay (TOR)", "Push Button (Start / Stop / Emergency)", "Lampu Indikator", "Panel Modular Drawer System", "Alat Ukur (Monitoring)"],
+    result: "Implementasi berhasil diselesaikan dalam waktu satu minggu dengan seluruh panel beroperasi sesuai desain perusahaan. Pengujian menunjukkan sistem kontrol, proteksi, dan operasi motor berjalan normal setelah proses wiring dan commissioning selesai dilakukan.",
     overview:
-      "Perakitan panel kontrol motor induksi 3 fasa 37 kW menggunakan metode Direct-On-Line (DOL) untuk sistem pompa CPO di lingkungan industri.",
+      "Mengimplementasikan panel kontrol motor induksi tiga fasa berbasis Direct On Line (DOL) untuk sistem feed pump CPO guna mendukung operasi industri yang aman, andal, dan mudah dipelihara.",
     problem:
-      "Dibutuhkan sistem kontrol motor berdaya besar (37 kW) untuk pompa CPO yang dapat dioperasikan secara langsung, dengan tetap mempertahankan keandalan dan kemudahan maintenance dalam lingkungan industri.",
+      "Sistem kontrol motor industri harus mampu mengoperasikan feed pump secara aman dan andal, sekaligus memudahkan proses pemeliharaan melalui penggunaan panel tipe drawer yang dapat dilepas tanpa mengganggu panel lainnya.",
     approach:
-      "Menggunakan metode Direct-On-Line (DOL) sesuai requirement industri, dengan pendekatan modular melalui sistem drawer untuk meningkatkan efisiensi instalasi dan kemudahan perawatan.",
+      "Mempelajari wiring diagram, menerjemahkan desain menjadi panel fisik, melakukan wiring setiap komponen sesuai SOP perusahaan, kemudian melaksanakan pengujian fungsi kontrol dan sistem proteksi sebelum panel dioperasikan.",
     implementation:
-      "Perakitan panel, wiring, dan testing berdasarkan desain yang diberikan, termasuk troubleshooting saat terjadi kesalahan wiring dan trip.",
+      "Saya memimpin tim magang dalam pelaksanaan pekerjaan berdasarkan arahan supervisor, mulai dari membaca wiring diagram, mengoordinasikan pembagian tugas, melakukan perakitan panel, wiring komponen kontrol, hingga pengujian indikator, emergency stop, tegangan, arus, dan fungsi sistem sebelum panel digunakan pada lingkungan produksi.",
     outcome:
-      "Panel digunakan langsung di industri dan motor berjalan stabil.",
+      "Sebanyak 10 panel drawer berhasil dirakit dan diimplementasikan pada sistem feed pump CPO. Seluruh panel beroperasi sesuai fungsi dan tetap digunakan dalam proses produksi industri.",
     images: [
-      "/images/projects/dol-panel-1.jpg",
-      "/images/projects/dol-panel-2.jpg",
-      "/images/projects/dol-panel-3.jpg",
+      "/images/projects/DOL1.jpg",
+      "/images/projects/DOL2.jpg",
+      "/images/projects/DOL3.jpg",
     ],
     projectUrl: "https://drive.google.com/your-link-here",
-    publishedAt: "2024",
+    publishedAt: "2025",
   },
   {
-    slug: "multi-source-energy-harvesting-sync-esp32",
-    title: "Multi-Source Energy Harvesting Synchronization System (5V DC, ESP32)",
+    slug: "embedded-energy-management-system",
+    title: "Embedded Energy Management System for Multi-Source Energy Harvesting",
     category: "electrical",
     categoryLabel: "Electrical Engineering",
     description:
-      "Proyek ini berfokus pada integrasi dan sinkronisasi multi-source energy menjadi satu power bus 5V DC. Sistem menggabungkan sumber dengan karakteristik berbeda melalui proses rectifikasi, konversi, dan kontrol switching untuk menghasilkan output yang dapat digunakan.",
-    tech: ["ESP32", "DC-DC Converter", "Rectifier", "MPPT/Buck Converter", "Li-ion Battery", "Switching Control"],
-    result: "Output masih fluktuatif namun sudah usable dan menunjukkan potensi untuk pengembangan lebih lanjut.",
+      "Proyek ini berfokus pada pengembangan Embedded Energy Management System (EMS) yang mengatur proses sinkronisasi sumber energi piezoelectric, photovoltaic, dan pico hydro ke dalam satu sistem penyimpanan dan distribusi daya. Sistem dirancang menggunakan pendekatan single-source switching untuk menjaga stabilitas suplai, menghindari konflik antar sumber, serta memastikan proses perpindahan sumber berlangsung secara aman dan otomatis.",
+    tech: [
+      "ESP32",
+      "INA219 Current Sensor",
+      "Li-ion Battery",
+      "DC-DC Boost Converter",
+      "DC-DC Buck Converter",
+      "Bridge Rectifier",
+      "Schottky Diode",
+      "MOSFET Switching",
+      "Breadboard"
+    ],
+    result: "Embedded Energy Management System berhasil beroperasi sesuai rancangan dengan menjaga stabilitas bus 5V pada skenario light load, medium load, heavy load, maupun dynamic load. Pengujian menunjukkan sistem mampu melakukan perpindahan sumber secara otomatis serta mempertahankan kontinuitas suplai daya tanpa konflik operasi antar sumber energi.",
     overview:
-      "Sinkronisasi tiga sumber energi (piezo, photovoltaic, pico hydro) menjadi output DC 5V menggunakan sistem kontrol berbasis ESP32.",
+      "Merancang sistem manajemen energi berbasis embedded untuk mengintegrasikan tiga sumber energi terbarukan ke dalam satu jalur suplai daya yang stabil, aman, dan siap digunakan oleh sistem berbasis DC.",
     problem:
-      "Perbedaan karakteristik sumber (AC/DC, fluktuatif, intermittent) menyebabkan konflik antar sumber, reverse current, dan ketidakstabilan tegangan.",
+      "Karakteristik tegangan dan arus dari piezoelectric, photovoltaic, dan pico hydro berbeda sehingga tidak dapat langsung digabungkan dalam satu jalur daya. Tanpa mekanisme manajemen energi yang tepat, sistem berisiko mengalami konflik antar sumber, arus balik (reverse current), serta ketidakstabilan tegangan keluaran.",
     approach:
-      "Menstandarkan semua sumber ke DC, lalu mengatur aliran energi menggunakan converter dan kontrol switching berbasis ESP32 untuk menjaga kestabilan sistem.",
+      "Merancang arsitektur Energy Management System berbasis embedded dengan pendekatan single-source switching, menggunakan MOSFET sebagai aktuator switching dan konfigurasi diode OR-ing sebagai proteksi arus balik. Seluruh sumber energi dikondisikan menjadi keluaran DC sebelum disalurkan menuju sistem penyimpanan dan didistribusikan melalui bus 5V yang stabil.",
     implementation:
-      "Mengintegrasikan piezo, photovoltaic, dan pico hydro ke dalam satu power bus melalui rangkaian rectifier dan DC-DC converter. Sistem dikontrol menggunakan ESP32 untuk mengatur switching on/off tiap sumber. Dilakukan troubleshooting terhadap masalah seperti drop tegangan, konflik antar sumber, dan reverse current selama proses pengujian.",
+      "Saya bertanggung jawab merancang keseluruhan sistem sinkronisasi sumber energi, mulai dari penyusunan arsitektur EMS, pemilihan metode switching, perancangan rangkaian daya, integrasi komponen proteksi, hingga pengujian performa sistem pada berbagai skenario beban. Fokus utama implementasi adalah memastikan proses perpindahan sumber berlangsung otomatis tanpa mengganggu kestabilan suplai daya.",
     outcome:
-      "Sistem berhasil menggabungkan beberapa sumber energi menjadi satu output 5V DC yang dapat digunakan untuk menyalakan perangkat.",
+      "Sistem berhasil mengintegrasikan tiga sumber energi berbeda ke dalam satu jalur distribusi daya yang stabil menggunakan pendekatan single-source switching. Proses perpindahan sumber berlangsung otomatis dengan proteksi terhadap arus balik sehingga sistem mampu menyuplai beban DC secara konsisten pada berbagai kondisi pengujian.",
     images: [
       "/images/projects/energy-harvesting-1.jpg",
       "/images/projects/energy-harvesting-2.jpg",
       "/images/projects/energy-harvesting-3.jpg",
     ],
     projectUrl: "https://drive.google.com/your-link-here",
-    publishedAt: "2024",
+    publishedAt: "2026",
   },
 
   // ===== MACHINE LEARNING =====
   {
-    slug: "embedded-soc-estimation-random-forest-esp32",
-    title: "Embedded Battery SoC Estimation using Random Forest on ESP32",
+    slug: "adaptive-battery-soc-estimation",
+    title: "Adaptive Battery State of Charge Estimation using Machine Learning",
     category: "ml",
     categoryLabel: "Machine Learning",
     description:
       "Proyek ini menggabungkan machine learning dan embedded system untuk mengestimasi SoC baterai secara adaptif. Model dilatih menggunakan kombinasi dataset pribadi dan publik, kemudian diimplementasikan dalam bentuk C code pada ESP32 untuk inference real-time.",
-    tech: ["ESP32", "Random Forest", "Python", "OLED Display", "Sensor Data (Voltage, Current, dll)"],
-    result: "(MAE: ~5%), (RMSE: ~6%), (R²: 0.92) Estimasi cukup akurat dan dapat digunakan dalam sistem kontrol.",
+    tech: [
+      "Python",
+      "Google Colab",
+      "Scikit-learn",
+      "LightGBM",
+      "Random Forest",
+      "Polynomial Regression",
+      "Pandas & NumPy",
+      "Matplotlib",
+      "ESP32",
+      "Arduino IDE",
+      "INA219 Current Sensor",
+      "Li-ion Battery"
+    ],
+    result: "Eksperimen menunjukkan bahwa machine learning mampu mengestimasi SoC dengan akurasi tinggi. LightGBM memperoleh MAE terendah sebesar 3,64%, diikuti Random Forest dan Polynomial Regression sebesar 3,94%, sehingga berpotensi menjadi alternatif metode estimasi SoC konvensional pada Battery Management System.",
     overview:
-      "Estimasi State of Charge (SoC) baterai Li-ion secara real-time menggunakan model Random Forest yang di-deploy pada ESP32.",
+      "Mengembangkan sistem estimasi State of Charge (SoC) baterai Li-Ion berbasis machine learning sebagai alternatif yang lebih adaptif terhadap metode estimasi konvensional pada Battery Management System, dengan mempertimbangkan keterbatasan perangkat embedded.",
     problem:
-      "Estimasi SoC sulit dilakukan secara akurat karena data bersifat non-linear, noisy, dan bergantung pada banyak parameter.",
+      "Metode estimasi SoC konvensional seperti Coulomb Counting dan Open Circuit Voltage memiliki keterbatasan ketika digunakan pada sistem dengan kondisi operasi yang dinamis karena rentan terhadap akumulasi kesalahan dan perubahan karakteristik baterai.",
     approach:
-      "Menggunakan model Random Forest untuk menangani hubungan non-linear, lalu mengintegrasikan hasil model ke dalam sistem embedded untuk estimasi real-time.",
+      "Mengevaluasi beberapa algoritma regresi machine learning menggunakan empat parameter operasional baterai (tegangan, arus, daya, dan waktu), kemudian memilih model terbaik berdasarkan trade-off antara akurasi prediksi dan kesesuaian implementasi pada perangkat embedded.",
     implementation:
-      "Melakukan pengumpulan dan penggabungan dataset (~5k data), preprocessing, serta training model di Python. Model kemudian dikonversi ke C code dan di-deploy ke ESP32 untuk inference real-time, dengan output ditampilkan dalam bentuk persentase SoC pada OLED display.Dilakukan penanganan terhadap masalah overfitting, noise data, dan keterbatasan resource pada ESP32 selama proses pengembangan.",
+      "Saya bertanggung jawab terhadap keseluruhan pipeline machine learning, mulai dari pengumpulan dan preprocessing dataset, feature engineering, pelatihan beberapa kandidat model regresi, evaluasi performa, hyperparameter tuning, hingga persiapan model untuk implementasi pada perangkat embedded.",
     outcome:
-      "Sistem mampu melakukan estimasi SoC secara real-time dengan performa yang cukup stabil di perangkat embedded.",
+      "Proyek menghasilkan pipeline estimasi SoC berbasis machine learning yang menjadi fondasi untuk implementasi lebih lanjut pada sistem Battery Management System berbasis ESP32.",
     images: [
-      "/images/projects/predictive-maintenance-1.jpg",
+      "/images/projects/SOC-estimation-1.jpg",
       "/images/projects/predictive-maintenance-2.jpg",
       "/images/projects/predictive-maintenance-3.jpg",
     ],
@@ -148,13 +172,41 @@ export const projects: Project[] = [
     outcome:
       "Model mampu melakukan prediksi konsumsi energi harian, namun masih memiliki keterbatasan akurasi akibat minimnya fitur.",
     images: [
-      "/images/projects/power-quality-1.jpg",
+      "/images/projects/power1.jpg",
       "/images/projects/power-quality-2.jpg",
       "/images/projects/power-quality-3.jpg",
     ],
     projectUrl: "https://github.com/username/power-quality-classifier",
     publishedAt: "2023",
   },
+    {
+    slug: "mirage-emotion-recognition-system",
+    title: "MIRAGE: AI-Based Emotion Recognition & Recommendation System",
+    category: "ml",
+    categoryLabel: "Machine Learning",
+    description:
+      "MIRAGE merupakan aplikasi berbasis web yang mengintegrasikan model CNN dengan sistem rekomendasi berbasis rule-based untuk mendeteksi lima kategori emosi melalui gambar maupun webcam. Proyek ini dikembangkan sebagai capstone bootcamp dengan fokus pada deployment model machine learning ke aplikasi yang dapat digunakan secara nyata.",
+    tech: ["Tensorflow", "Python", "Keras", "OpenCV", "Streamlit", "React", "TypeScript", "Vite", "Express.js", "Axios", "MongoDB", "Hugging Face API"],
+    result: "Model mencapai test accuracy 86.47%, Macro F1-Score 0.8620, dan Weighted F1-Score 0.8640 dengan lima kelas emosi. Sistem berhasil di-deploy ke Hugging Face dan terintegrasi dengan aplikasi web untuk kebutuhan prediksi secara interaktif.",
+    overview:
+      "Sistem deteksi emosi berbasis Convolutional Neural Network (CNN) yang mampu mengenali lima ekspresi wajah dan memberikan rekomendasi berbasis AI untuk meningkatkan self-awareness serta mendukung screening awal kondisi emosional.",
+    problem:
+      "Banyak pengguna kesulitan mengenali kondisi emosionalnya secara objektif, sementara proses screening awal umumnya masih memerlukan observasi manual. Diperlukan sistem yang mampu melakukan deteksi emosi secara cepat dan memberikan rekomendasi awal yang mudah diakses.",
+    approach:
+      "Membangun model CNN empat lapis menggunakan dataset Human Face Emotions, menerapkan preprocessing untuk meningkatkan kualitas data, serta mengoptimalkan performa model melalui hyperparameter tuning dan early stopping sebelum diintegrasikan ke dalam aplikasi web.",
+    implementation:
+      "Saya berperan sebagai Project Manager sekaligus penanggung jawab pipeline machine learning, mulai dari perancangan alur pengembangan, preprocessing data, training, hyperparameter tuning, hingga deployment model ke Hugging Face. Sistem mendukung prediksi melalui upload gambar maupun webcam, menampilkan probabilitas setiap emosi, serta menghasilkan rekomendasi berbasis rule-based yang terintegrasi pada aplikasi web.",
+    outcome:
+      "Model berhasil diimplementasikan ke dalam aplikasi web dengan fitur autentikasi, dashboard, riwayat prediksi, serta inference berbasis API sehingga dapat digunakan sebagai media self-assessment kondisi emosional.",
+    images: [
+      "/images/projects/power1.jpg",
+      "/images/projects/power-quality-2.jpg",
+      "/images/projects/power-quality-3.jpg",
+    ],
+    projectUrl: "https://github.com/username/power-quality-classifier",
+    publishedAt: "2023",
+  },
+
 
   // ===== OTHER =====
   {

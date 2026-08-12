@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 const categoryStyles: Record<string, { color: string; bg: string; border: string }> = {
@@ -20,95 +20,132 @@ export default function ProjectCard({ project, index }: { project: Project; inde
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -4 }}
-      style={{
-        background: "#141414",
-        border: "1px solid rgba(255,255,255,0.07)",
-        borderRadius: "16px",
-        padding: "24px",
-        cursor: "pointer",
-        transition: "border-color 0.3s",
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
-      }}
-      onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(34,197,94,0.3)")}
-      onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)")}
     >
-      {/* Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{
-          fontSize: "11px",
-          fontWeight: 500,
-          color: cat.color,
-          background: cat.bg,
-          border: `1px solid ${cat.border}`,
-          borderRadius: "999px",
-          padding: "3px 10px",
-        }}>
-          {project.categoryLabel}
-        </span>
-        <Link href={`/projects/${project.slug}`} style={{ color: "#6B7280" }}>
-          <ArrowUpRight size={16} />
-        </Link>
-      </div>
+      <Link
+        href={`/projects/${project.slug}`}
+        style={{
+          display: "block",
+          background: "#141414",
+          border: "1px solid rgba(255,255,255,0.07)",
+          borderRadius: "16px",
+          overflow: "hidden",
+          textDecoration: "none",
+          cursor: "pointer",
+          transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "rgba(34,197,94,0.35)";
+          e.currentTarget.style.transform = "translateY(-4px)";
+          e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.4)";
+          const img = e.currentTarget.querySelector(".card-img") as HTMLElement;
+          if (img) img.style.transform = "scale(1.05)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow = "none";
+          const img = e.currentTarget.querySelector(".card-img") as HTMLElement;
+          if (img) img.style.transform = "scale(1)";
+        }}
+      >
+        {/* Thumbnail */}
+        <div style={{ position: "relative", width: "100%", height: "140px", overflow: "hidden" }}>
+          <Image
+            src={project.images[0]}
+            alt={project.title}
+            fill
+            className="card-img"
+            style={{
+              objectFit: "cover",
+              transition: "transform 0.4s ease",
+            }}
+          />
+          {/* Overlay gradient */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to bottom, transparent 40%, rgba(20,20,20,0.8) 100%)",
+          }} />
+          {/* Category badge di atas gambar */}
+          <div style={{ position: "absolute", top: "12px", left: "12px" }}>
+            <span style={{
+              fontSize: "10px",
+              fontWeight: 600,
+              color: cat.color,
+              background: "rgba(11,11,11,0.75)",
+              border: `1px solid ${cat.border}`,
+              borderRadius: "999px",
+              padding: "3px 10px",
+              backdropFilter: "blur(6px)",
+              letterSpacing: "0.05em",
+            }}>
+              {project.categoryLabel}
+            </span>
+          </div>
+        </div>
 
-      {/* Title */}
-      <h3 style={{
-        fontFamily: "var(--font-space-grotesk), sans-serif",
-        fontSize: "17px",
-        fontWeight: 600,
-        color: "#EAEAEA",
-        lineHeight: 1.35,
-      }}>
-        {project.title}
-      </h3>
-
-      {/* Description */}
-      <p style={{
-        fontSize: "13px",
-        color: "#9CA3AF",
-        lineHeight: 1.65,
-        display: "-webkit-box",
-        WebkitLineClamp: 3,
-        WebkitBoxOrient: "vertical",
-        overflow: "hidden",
-      }}>
-        {project.description}
-      </p>
-
-      {/* Tech stack */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-        {project.tech.slice(0, 4).map(t => (
-          <span key={t} style={{
-            fontSize: "11px",
-            fontFamily: "monospace",
-            color: "#6B7280",
-            background: "rgba(255,255,255,0.05)",
-            padding: "2px 8px",
-            borderRadius: "4px",
+        {/* Content */}
+        <div style={{ padding: "16px" }}>
+          {/* Title */}
+          <h3 style={{
+            fontFamily: "var(--font-space-grotesk), sans-serif",
+            fontSize: "14px",
+            fontWeight: 600,
+            color: "#EAEAEA",
+            lineHeight: 1.35,
+            marginBottom: "10px",
           }}>
-            {t}
-          </span>
-        ))}
-        {project.tech.length > 4 && (
-          <span style={{ fontSize: "11px", color: "#6B7280", padding: "2px 4px" }}>
-            +{project.tech.length - 4}
-          </span>
-        )}
-      </div>
+            {project.title}
+          </h3>
 
-      {/* Result */}
-      <div style={{
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        paddingTop: "12px",
-        display: "flex",
-        gap: "8px",
-        alignItems: "flex-start",
-      }}>
-        <span style={{ color: "#22C55E", fontSize: "13px", flexShrink: 0 }}>→</span>
-        <p style={{ fontSize: "12px", color: "#9CA3AF", lineHeight: 1.5 }}>{project.result}</p>
-      </div>
+          {/* Description */}
+          <p style={{
+            fontSize: "13px",
+            color: "#9CA3AF",
+            lineHeight: 1.65,
+            marginBottom: "16px",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}>
+            {project.description}
+          </p>
+
+          {/* Tech stack */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "16px" }}>
+            {project.tech.slice(0, 4).map((t, i) => (
+              <span key={`${t}-${i}`} style={{
+                fontSize: "11px",
+                fontFamily: "monospace",
+                color: "#6B7280",
+                background: "rgba(255,255,255,0.05)",
+                padding: "2px 8px",
+                borderRadius: "4px",
+              }}>
+                {t}
+              </span>
+            ))}
+            {project.tech.length > 4 && (
+              <span style={{ fontSize: "11px", color: "#6B7280", padding: "2px 4px" }}>
+                +{project.tech.length - 4}
+              </span>
+            )}
+          </div>
+
+          {/* Result */}
+          <div style={{
+            borderTop: "1px solid rgba(255,255,255,0.06)",
+            paddingTop: "12px",
+            display: "flex",
+            gap: "8px",
+            alignItems: "flex-start",
+          }}>
+            <span style={{ color: "#22C55E", fontSize: "13px", flexShrink: 0 }}>→</span>
+            <p style={{ fontSize: "12px", color: "#9CA3AF", lineHeight: 1.5 }}>{project.result}</p>
+          </div>
+        </div>
+      </Link>
     </motion.div>
   );
 }

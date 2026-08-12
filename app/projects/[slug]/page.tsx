@@ -105,8 +105,23 @@ export default async function ProjectPage({ params }: Props) {
 
         {/* Inline image 1 */}
         <div style={{ marginBottom: "48px" }}>
-          <div style={{ position: "relative", width: "100%", height: "340px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
-            <Image src={project.images[1]} alt={`${project.title} detail`} fill style={{ objectFit: "cover" }} />
+          <div style={{
+            borderRadius: "8px",
+            overflow: "hidden",
+            border: "1px solid rgba(255,255,255,0.07)",
+            background: "#0B0B0B",
+            display: "flex",
+            justifyContent: "center",
+          }}>
+            <img
+              src={project.images[1]}
+              alt={`${project.title} detail`}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            />
           </div>
           <p style={{ fontSize: "12px", color: "#6B7280", marginTop: "10px", fontFamily: "monospace", textAlign: "center" }}>
             Fig. 2 — Detail implementasi {project.title}
@@ -119,7 +134,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         <div style={{ marginBottom: "48px" }}>
-          <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "22px", fontWeight: 700, color: "#EAEAEA", marginBottom: "16px", paddingBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>Pendekatan</h2>
+          <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "22px", fontWeight: 700, color: "#EAEAEA", marginBottom: "16px", paddingBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>Approach</h2>
           <p style={{ fontSize: "16px", color: "#9CA3AF", lineHeight: 1.85 }}>{project.approach}</p>
         </div>
 
@@ -139,7 +154,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         <div style={{ marginBottom: "48px" }}>
-          <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "22px", fontWeight: 700, color: "#EAEAEA", marginBottom: "16px", paddingBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>Hasil</h2>
+          <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "22px", fontWeight: 700, color: "#EAEAEA", marginBottom: "16px", paddingBottom: "12px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>Outcome</h2>
           <p style={{ fontSize: "16px", color: "#9CA3AF", lineHeight: 1.85 }}>{project.outcome}</p>
         </div>
 
