@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { Download, ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export default function Hero() {
+  const isMobile = useIsMobile();
+
   return (
     <section
       id="hero"
@@ -14,7 +17,7 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "80px 80px 48px",
+        padding: isMobile ? "100px 20px 40px" : "80px 80px 48px",
         overflow: "hidden",
       }}
     >
@@ -39,18 +42,87 @@ export default function Hero() {
         pointerEvents: "none",
       }} />
 
-      {/* 2 kolom */}
+      {/* 2 kolom (1 kolom di mobile) */}
       <div style={{
         maxWidth: "1152px",
         margin: "0 auto",
         width: "100%",
         display: "grid",
-        gridTemplateColumns: "1fr 340px",
-        gap: "48px",
+        gridTemplateColumns: isMobile ? "1fr" : "1fr 340px",
+        gap: isMobile ? "40px" : "48px",
         alignItems: "center",
         position: "relative",
         zIndex: 1,
       }}>
+
+        {/* Kolom kanan: foto (pindah ke atas di mobile) */}
+        {isMobile && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            style={{
+              position: "relative",
+              width: "100%",
+              maxWidth: "280px",
+              height: "340px",
+              margin: "0 auto",
+            }}
+          >
+            <div style={{
+              position: "absolute",
+              inset: "-20px",
+              background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)",
+              borderRadius: "50%",
+              pointerEvents: "none",
+            }} />
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              border: "1px solid rgba(34,197,94,0.2)",
+              borderRadius: "24px",
+              zIndex: 0,
+            }} />
+            <Image
+              src="/images/photo.png"
+              alt="Profile Photo"
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "top",
+                borderRadius: "24px",
+                filter: "grayscale(20%)",
+              }}
+            />
+            <div style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "100px",
+              background: "linear-gradient(to top, #0B0B0B, transparent)",
+              borderRadius: "0 0 24px 24px",
+              zIndex: 1,
+            }} />
+            <div style={{
+              position: "absolute",
+              bottom: "20px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "rgba(11,11,11,0.85)",
+              border: "1px solid rgba(34,197,94,0.25)",
+              backdropFilter: "blur(8px)",
+              borderRadius: "999px",
+              padding: "6px 16px",
+              zIndex: 2,
+              whiteSpace: "nowrap",
+            }}>
+              <span style={{ fontSize: "11px", color: "#22C55E", fontFamily: "monospace" }}>
+                EE + ML Engineer
+              </span>
+            </div>
+          </motion.div>
+        )}
 
         {/* Kolom kiri */}
         <div>
@@ -199,105 +271,109 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Kolom kanan: foto */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          style={{
-            position: "relative",
-            width: "340px",
-            height: "420px",
-            flexShrink: 0,
-          }}
-        >
-          <div style={{
-            position: "absolute",
-            inset: "-20px",
-            background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)",
-            borderRadius: "50%",
-            pointerEvents: "none",
-          }} />
-
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            border: "1px solid rgba(34,197,94,0.2)",
-            borderRadius: "24px",
-            zIndex: 0,
-          }} />
-
-          <Image
-            src="/images/photo.png"
-            alt="Profile Photo"
-            fill
+        {/* Kolom kanan: foto (desktop only, di sini posisinya) */}
+        {!isMobile && (
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             style={{
-              objectFit: "cover",
-              objectPosition: "top",
-              borderRadius: "24px",
-              filter: "grayscale(20%)",
+              position: "relative",
+              width: "340px",
+              height: "420px",
+              flexShrink: 0,
             }}
-          />
+          >
+            <div style={{
+              position: "absolute",
+              inset: "-20px",
+              background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)",
+              borderRadius: "50%",
+              pointerEvents: "none",
+            }} />
 
-          <div style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: "120px",
-            background: "linear-gradient(to top, #0B0B0B, transparent)",
-            borderRadius: "0 0 24px 24px",
-            zIndex: 1,
-          }} />
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              border: "1px solid rgba(34,197,94,0.2)",
+              borderRadius: "24px",
+              zIndex: 0,
+            }} />
 
-          <div style={{
-            position: "absolute",
-            bottom: "24px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: "rgba(11,11,11,0.85)",
-            border: "1px solid rgba(34,197,94,0.25)",
-            backdropFilter: "blur(8px)",
-            borderRadius: "999px",
-            padding: "8px 20px",
-            zIndex: 2,
-            whiteSpace: "nowrap",
-          }}>
-            <span style={{ fontSize: "12px", color: "#22C55E", fontFamily: "monospace" }}>
-              EE + ML Engineer
-            </span>
-          </div>
-        </motion.div>
+            <Image
+              src="/images/photo.png"
+              alt="Profile Photo"
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "top",
+                borderRadius: "24px",
+                filter: "grayscale(20%)",
+              }}
+            />
+
+            <div style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "120px",
+              background: "linear-gradient(to top, #0B0B0B, transparent)",
+              borderRadius: "0 0 24px 24px",
+              zIndex: 1,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              bottom: "24px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              background: "rgba(11,11,11,0.85)",
+              border: "1px solid rgba(34,197,94,0.25)",
+              backdropFilter: "blur(8px)",
+              borderRadius: "999px",
+              padding: "8px 20px",
+              zIndex: 2,
+              whiteSpace: "nowrap",
+            }}>
+              <span style={{ fontSize: "12px", color: "#22C55E", fontFamily: "monospace" }}>
+                EE + ML Engineer
+              </span>
+            </div>
+          </motion.div>
+        )}
 
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        style={{
-          position: "absolute",
-          bottom: "32px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-        }}
-      >
-        <span style={{ fontSize: "11px", color: "#6B7280", letterSpacing: "0.1em" }}>scroll</span>
+      {!isMobile && (
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
           style={{
-            width: "1px",
-            height: "32px",
-            background: "linear-gradient(to bottom, rgba(34,197,94,0.5), transparent)",
+            position: "absolute",
+            bottom: "32px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
           }}
-        />
-      </motion.div>
+        >
+          <span style={{ fontSize: "11px", color: "#6B7280", letterSpacing: "0.1em" }}>scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            style={{
+              width: "1px",
+              height: "32px",
+              background: "linear-gradient(to bottom, rgba(34,197,94,0.5), transparent)",
+            }}
+          />
+        </motion.div>
+      )}
     </section>
   );
 }
