@@ -127,7 +127,7 @@ export default function Hero() {
               marginTop: "20px",
             }}
           >
-            Saya suka membangun sistem yang benar-benar bekerja — dari panel listrik
+            Saya suka membangun sistem yang benar-benar bekerja dari panel listrik
             sampai model prediksi.
             
             Sedang menyelesaikan studi Teknik Elektro sambil

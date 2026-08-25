@@ -62,9 +62,10 @@ export default function About() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {[
-              "Saya merupakan mahasiswa Teknik Elektro dengan fokus pada renewable energy dan power system, serta memiliki ketertarikan pada penerapan machine learning dalam engineering. Saya mengembangkan pendekatan yang menggabungkan sistem energi dan kecerdasan komputasi untuk membangun solusi teknologi yang relevan ke depan.",
-              "Saya telah mengerjakan proyek seperti multi-source energy harvesting berbasis embedded system, estimasi State of Charge (SoC) baterai menggunakan machine learning di ESP32, serta deployment sistem tenaga surya untuk kebutuhan pasca bencana. Proyek ini mencerminkan kemampuan saya dalam merancang dan mengintegrasikan sistem secara nyata.",
-              "Saya terbiasa bekerja dengan pendekatan system thinking, cepat dalam problem solving, dan detail dalam pengembangan sistem. Ke depan, saya ingin mengembangkan solusi yang menggabungkan energy systems dan machine learning dalam konteks industri dan teknologi masa depan.",
+              "Saya Fathi Annaqi, mahasiswa semester 8 Teknik Elektro di Universitas Malikussaleh, dengan fokus pada renewable energy dan power system dan di sela itu, saya juga ngutak-ngatik machine learning. Bagi saya dua bidang ini nggak terpisah: sistem energi butuh kecerdasan komputasi untuk jadi lebih adaptif, dan itu yang terus saya eksplorasi.",
+              "Pengalaman saya nggak cuma di ruang kelas. Saya pernah magang menangani maintenance sistem kelistrikan di sebuah pabrik minyak makan, lalu pindah jalur ke UPT Bimbingan Karir & Kewirausahaan sebagai programmer membangun sistem auto-generate logbook mingguan untuk peserta magang dan menangani website tracer study. Saat ini saya juga Koordinator Asisten Lab Teknik Elektro Unimal (2025–2026), aktif freelance web programming, dan penerima Beasiswa DBS Foundation.",
+              "Di ranah riset, saya terlibat sebagai AR Engineer di tim PKM-PM pendanaan nasional, sambil mengerjakan proyek teknis seperti multi-source energy harvesting berbasis embedded system, estimasi State of Charge baterai dengan ML di ESP32, dan deployment sistem tenaga surya untuk kebutuhan pasca bencana semuanya mencerminkan cara saya bekerja, system thinking, cepat problem solving, dan detail dalam eksekusi.",
+              "Ke depan, saya ingin terus mengembangkan solusi yang menggabungkan energy systems dan machine learning untuk kebutuhan industri dan terbuka untuk peluang magang, kolaborasi riset, maupun proyek freelance.",
             ].map((text, i) => (
               <p key={i} style={{ fontSize: "15px", color: "#9CA3AF", lineHeight: 1.75 }}>
                 {text}

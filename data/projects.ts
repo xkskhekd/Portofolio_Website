@@ -103,7 +103,7 @@ export const projects: Project[] = [
     outcome:
       "Sistem berhasil mengintegrasikan tiga sumber energi berbeda ke dalam satu jalur distribusi daya yang stabil menggunakan pendekatan single-source switching. Proses perpindahan sumber berlangsung otomatis dengan proteksi terhadap arus balik sehingga sistem mampu menyuplai beban DC secara konsisten pada berbagai kondisi pengujian.",
     images: [
-      "/images/projects/energy-harvesting-1.jpg",
+      "/images/projects/NOT_YET.png",
       "/images/projects/energy-harvesting-2.jpg",
       "/images/projects/energy-harvesting-3.jpg",
     ],
@@ -145,124 +145,124 @@ export const projects: Project[] = [
     outcome:
       "Proyek menghasilkan pipeline estimasi SoC berbasis machine learning yang menjadi fondasi untuk implementasi lebih lanjut pada sistem Battery Management System berbasis ESP32.",
     images: [
-      "/images/projects/SOC-estimation-1.jpg",
+      "/images/projects/NOT_YET.png",
       "/images/projects/predictive-maintenance-2.jpg",
       "/images/projects/predictive-maintenance-3.jpg",
     ],
     projectUrl: "https://github.com/username/predictive-maintenance",
     publishedAt: "2023",
   },
-  {
-    slug: "energy-consumption-prediction-xgboost",
-    title: "Household Energy Consumption Prediction using XGBoost",
+    {
+    slug: "ev-battery-rul-prediction",
+    title: "EV Battery Remaining Useful Life (RUL) Prediction",
     category: "ml",
     categoryLabel: "Machine Learning",
     description:
-      "Proyek ini berfokus pada prediksi konsumsi energi harian menggunakan dataset publik (~140k data) yang berisi histori konsumsi per jam dan timestamp. Model dibangun menggunakan XGBoost untuk menangani pola konsumsi yang bersifat temporal.",
-    tech: ["XGBoost", "Python", "Pandas", "Scikit-learn", "Streamlit Dashboard", "Matplotlib"],
-    result: "(MAE: 34544), (RMSE: 47112). (R²: 0.82) Model mampu menangkap pola konsumsi dengan baik, namun masih memiliki keterbatasan akurasi akibat minimnya fitur.",
+      "[DUMMY — lengkapi setelah project selesai] Sistem prediksi sisa umur pakai (Remaining Useful Life) baterai EV berbasis machine learning, menggunakan data historis siklus charge-discharge untuk memprediksi berapa siklus lagi sebelum kapasitas baterai turun ke ambang batas akhir masa pakai.",
+    tech: ["Python", "XGBoost", "TensorFlow/Keras (LSTM)", "Pandas", "Scikit-learn", "Streamlit / React + FastAPI"],
+    result: "[DUMMY — isi setelah eksperimen selesai, misal: MAE, RMSE, perbandingan skema model]",
     overview:
-      "Prediksi konsumsi energi rumah tangga per hari menggunakan model regresi XGBoost berbasis data historis.",
+      "[DUMMY] Memprediksi sisa umur baterai EV dari pola degradasi kapasitas pada data historis siklus charge-discharge, sebagai alat bantu prediktif maintenance untuk sistem battery management.",
     problem:
-      "Prediksi konsumsi energi sulit akurat karena keterbatasan fitur dan pola penggunaan yang berubah-ubah.",
+      "[DUMMY] Metode konvensional untuk memperkirakan umur baterai umumnya reaktif (baru diketahui setelah performa menurun signifikan), sehingga dibutuhkan pendekatan prediktif berbasis data historis degradasi.",
     approach:
-      "Menggunakan XGBoost karena performa lebih baik dibanding model lain dalam menangkap pola non-linear pada data historis konsumsi energi.",
+      "[DUMMY] Melakukan feature engineering dari data cycle (capacity fade, internal resistance trend), membandingkan model XGBoost/Random Forest sebagai baseline dengan LSTM/GRU untuk menangkap pola degradasi sequential.",
     implementation:
-      "Melakukan preprocessing data time-series, training model XGBoost, serta evaluasi performa menggunakan metrik regresi. Hasil prediksi ditampilkan dalam bentuk dashboard menggunakan Streamlit.",
+      "[DUMMY — isi setelah project berjalan]",
     outcome:
-      "Model mampu melakukan prediksi konsumsi energi harian, namun masih memiliki keterbatasan akurasi akibat minimnya fitur.",
+      "[DUMMY — isi setelah project selesai]",
     images: [
-      "/images/projects/power1.jpg",
-      "/images/projects/power-quality-2.jpg",
-      "/images/projects/power-quality-3.jpg",
+      "/images/projects/NOT_YET.png",
+      "/images/projects/ev-battery-rul-2.jpg",
+      "/images/projects/ev-battery-rul-3.jpg",
     ],
-    projectUrl: "https://github.com/username/power-quality-classifier",
-    publishedAt: "2023",
+    projectUrl: "https://github.com/xkskhekd/your-repo-here",
+    publishedAt: "2026",
   },
     {
-    slug: "mirage-emotion-recognition-system",
-    title: "MIRAGE: AI-Based Emotion Recognition & Recommendation System",
-    category: "ml",
-    categoryLabel: "Machine Learning",
-    description:
-      "MIRAGE merupakan aplikasi berbasis web yang mengintegrasikan model CNN dengan sistem rekomendasi berbasis rule-based untuk mendeteksi lima kategori emosi melalui gambar maupun webcam. Proyek ini dikembangkan sebagai capstone bootcamp dengan fokus pada deployment model machine learning ke aplikasi yang dapat digunakan secara nyata.",
-    tech: ["Tensorflow", "Python", "Keras", "OpenCV", "Streamlit", "React", "TypeScript", "Vite", "Express.js", "Axios", "MongoDB", "Hugging Face API"],
-    result: "Model mencapai test accuracy 86.47%, Macro F1-Score 0.8620, dan Weighted F1-Score 0.8640 dengan lima kelas emosi. Sistem berhasil di-deploy ke Hugging Face dan terintegrasi dengan aplikasi web untuk kebutuhan prediksi secara interaktif.",
-    overview:
-      "Sistem deteksi emosi berbasis Convolutional Neural Network (CNN) yang mampu mengenali lima ekspresi wajah dan memberikan rekomendasi berbasis AI untuk meningkatkan self-awareness serta mendukung screening awal kondisi emosional.",
-    problem:
-      "Banyak pengguna kesulitan mengenali kondisi emosionalnya secara objektif, sementara proses screening awal umumnya masih memerlukan observasi manual. Diperlukan sistem yang mampu melakukan deteksi emosi secara cepat dan memberikan rekomendasi awal yang mudah diakses.",
-    approach:
-      "Membangun model CNN empat lapis menggunakan dataset Human Face Emotions, menerapkan preprocessing untuk meningkatkan kualitas data, serta mengoptimalkan performa model melalui hyperparameter tuning dan early stopping sebelum diintegrasikan ke dalam aplikasi web.",
-    implementation:
-      "Saya berperan sebagai Project Manager sekaligus penanggung jawab pipeline machine learning, mulai dari perancangan alur pengembangan, preprocessing data, training, hyperparameter tuning, hingga deployment model ke Hugging Face. Sistem mendukung prediksi melalui upload gambar maupun webcam, menampilkan probabilitas setiap emosi, serta menghasilkan rekomendasi berbasis rule-based yang terintegrasi pada aplikasi web.",
-    outcome:
-      "Model berhasil diimplementasikan ke dalam aplikasi web dengan fitur autentikasi, dashboard, riwayat prediksi, serta inference berbasis API sehingga dapat digunakan sebagai media self-assessment kondisi emosional.",
-    images: [
-      "/images/projects/power1.jpg",
-      "/images/projects/power-quality-2.jpg",
-      "/images/projects/power-quality-3.jpg",
-    ],
-    projectUrl: "https://github.com/username/power-quality-classifier",
-    publishedAt: "2023",
-  },
+  slug: "mirage-emotion-recognition-system",
+  title: "MIRAGE: AI-Based Emotion Recognition & Recommendation System",
+  category: "ml",
+  categoryLabel: "Machine Learning",
+  description:
+    "MIRAGE merupakan aplikasi berbasis web yang mengintegrasikan model CNN dengan sistem rekomendasi berbasis rule-based untuk mendeteksi lima kategori emosi melalui gambar maupun webcam. Proyek ini dikembangkan sebagai capstone bootcamp dengan fokus pada deployment model machine learning ke aplikasi yang dapat digunakan secara nyata.",
+  tech: ["Tensorflow", "Python", "Keras", "OpenCV", "Streamlit", "React", "TypeScript", "Vite", "Express.js", "Axios", "MongoDB", "FastAPI"],
+  result: "Model mencapai test accuracy 86.47%, Macro F1-Score 0.8620, dan Weighted F1-Score 0.8640 dengan lima kelas emosi. Sistem berhasil di-deploy secara end-to-end (frontend Vercel, backend Render) dan terintegrasi dengan aplikasi web untuk kebutuhan prediksi secara interaktif.",
+  overview:
+    "Sistem deteksi emosi berbasis Convolutional Neural Network (CNN) yang mampu mengenali lima ekspresi wajah dan memberikan rekomendasi berbasis AI untuk meningkatkan self-awareness serta mendukung screening awal kondisi emosional.",
+  problem:
+    "Banyak pengguna kesulitan mengenali kondisi emosionalnya secara objektif, sementara proses screening awal umumnya masih memerlukan observasi manual. Diperlukan sistem yang mampu melakukan deteksi emosi secara cepat dan memberikan rekomendasi awal yang mudah diakses.",
+  approach:
+    "Membangun model CNN empat lapis menggunakan dataset Human Face Emotions, menerapkan preprocessing untuk meningkatkan kualitas data, serta mengoptimalkan performa model melalui hyperparameter tuning dan class weight balancing sebelum diintegrasikan ke dalam aplikasi web.",
+  implementation:
+    "Saya berperan sebagai AI Engineer (Evaluation & Inference) sekaligus penanggung jawab pipeline evaluasi model, mulai dari analisis performa model, pembuatan fungsi inference, hingga persiapan integrasi model ke backend menggunakan FastAPI. Sistem mendukung prediksi melalui upload gambar maupun webcam, menampilkan probabilitas setiap emosi, serta menghasilkan rekomendasi berbasis rule-based yang terintegrasi pada aplikasi web.",
+  outcome:
+    "Model berhasil diimplementasikan ke dalam aplikasi web dengan fitur autentikasi, dashboard, riwayat prediksi, serta inference berbasis API sehingga dapat digunakan sebagai media self-assessment kondisi emosional.",
+  images: [
+    "/images/projects/mirage-1.jpg",
+    "/images/projects/mirage-2.jpg",
+    "/images/projects/mirage-3.jpg",
+  ],
+  projectUrl: "https://github.com/xkskhekd/miragE_-Capstone",
+  publishedAt: "2026",
+},
 
 
   // ===== OTHER =====
   {
-    slug: "ar-3d-image-tracking-unity-vuforia",
-    title: "AR 3D Image Tracking Application using Unity & Vuforia",
-    category: "other",
-    categoryLabel: "Other Engineering",
-    description:
-      "Proyek ini mengembangkan aplikasi AR menggunakan Unity dan Vuforia dengan pendekatan marker-based tracking. Sistem memanfaatkan QR code sebagai marker untuk memunculkan objek 3D beserta animasinya secara real-time di perangkat mobile.",
-    tech: ["Unity", "Vuforia", "C#", "Android (APK)", "Image Tracking"],
-    result: "Sistem berjalan dengan baik di perangkat Android, dengan performa tracking yang cukup stabil dalam kondisi pencahayaan yang memadai.",
-    overview:
-      "Aplikasi Augmented Reality berbasis Android menggunakan image tracking untuk menampilkan model 3D interaktif sebagai media edukasi.",
-    problem:
-      "Tracking objek tidak selalu stabil akibat pengaruh kualitas marker dan kondisi pencahayaan, sehingga posisi dan orientasi objek 3D tidak konsisten.",
-    approach:
-      "Menggunakan Vuforia image tracking dengan optimasi marker dan pengujian di berbagai kondisi pencahayaan untuk meningkatkan stabilitas tracking.",
-    implementation:
-      "Mengembangkan aplikasi di Unity dengan integrasi Vuforia SDK untuk image tracking berbasis QR code. Sistem dirancang untuk menampilkan model 3D dengan animasi saat marker terdeteksi, serta di-build menjadi aplikasi Android (APK) yang dapat digunakan secara langsung.",
-    outcome:
-      "Aplikasi berhasil menampilkan objek 3D dengan animasi secara real-time dan dapat digunakan sebagai media edukasi berbasis AR.",
-    images: [
-      "/images/projects/scada-1.jpg",
-      "/images/projects/scada-2.jpg",
-      "/images/projects/scada-3.jpg",
-    ],
-    projectUrl: "https://github.com/username/scada-dashboard",
-    publishedAt: "2023",
-  },
+  slug: "pkm-pm-si-gempi-ar-3d",
+  title: "Si Gempi : Interactive AR Comic for High School Legal Literacy",
+  category: "other",
+  categoryLabel: "Other Engineering",
+  description:
+    "Si Gempi merupakan aplikasi Augmented Reality berbasis marker yang mengintegrasikan komik edukasi hukum dengan objek 3D interaktif. Proyek ini dikembangkan dalam program PKM-PM pendanaan nasional, mencakup pengembangan aplikasi AR menggunakan Unity dan Vuforia, pembuatan aset 3D di Blender, hingga deployment dan demonstrasi langsung di sekolah.",
+  tech: ["Unity", "Vuforia", "C#", "Blender", "Android (APK)", "Image Tracking", "3D Modeling & Rigging"],
+  result: "Aplikasi berhasil diimplementasikan dan didemonstrasikan langsung di sekolah, dengan tracking objek yang stabil pada kondisi pencahayaan memadai serta animasi 3D yang meningkatkan pemahaman siswa melalui storytelling interaktif.",
+  overview:
+    "Mengembangkan aplikasi AR edukatif yang menggabungkan komik hukum dengan model 3D interaktif untuk meningkatkan pemahaman siswa SMA terhadap materi hukum melalui storytelling berbasis teknologi.",
+  problem:
+    "Materi edukasi hukum konvensional cenderung kurang menarik bagi siswa. Dibutuhkan media pembelajaran yang lebih interaktif, sekaligus tracking objek yang stabil terhadap variasi marker dan kondisi pencahayaan di lapangan.",
+  approach:
+    "Membangun aplikasi AR berbasis marker (image tracking) menggunakan Vuforia, membuat tiga karakter 3D low-poly beserta environment dan animasi di Blender, kemudian mengintegrasikan seluruh aset ke dalam aplikasi Unity dan melakukan pengujian tracking pada berbagai kondisi pencahayaan.",
+  implementation:
+    "Saya berperan sebagai Technical Lead (AR & Web), memimpin arsitektur sistem dan implementasi teknis mulai dari pengembangan aplikasi AR (Unity + Vuforia) dengan fitur tracking, animasi, dan UI interaktif, hingga pembuatan aset 3D karakter dan environment di Blender yang dioptimasi untuk performa real-time. Saya juga memimpin proses deployment dan demonstrasi langsung di sekolah.",
+  outcome:
+    "Aplikasi berhasil menampilkan objek 3D dengan animasi secara real-time dan digunakan sebagai media edukasi hukum berbasis AR yang didemonstrasikan langsung kepada siswa SMA.",
+  images: [
+    "/images/projects/sigempi-1.jpg",
+    "/images/projects/sigempi-2.jpg",
+    "/images/projects/sigempi-3.jpg",
+  ],
+  projectUrl: "https://sigempi.com/",
+  publishedAt: "2025",
+},
   {
-    slug: "3d-character-animation-blender-ar",
-    title: "3D Character Modeling & Animation for AR Application (Blender)",
-    category: "other",
-    categoryLabel: "Other Engineering",
-    description:
-      "Proyek ini mencakup pembuatan tiga karakter 3D bergaya semi-realistic low-poly beserta environment untuk kebutuhan aplikasi AR. Karakter dianimasikan untuk merepresentasikan skenario edukatif dan diintegrasikan langsung ke dalam aplikasi.",
-    tech: ["Blender", "Photoshop", "3D Modeling", "Rigging", "Animation"],
-    result: "Asset usable dan terintegrasi dengan baik, meskipun masih pada level dasar dari segi detail dan animasi.",
-    overview:
-      "Pembuatan karakter 3D beserta animasi untuk aplikasi Augmented Reality berbasis edukasi.",
-    problem:
-      "Proses rigging dan animasi cukup kompleks, terutama pada sinkronisasi sendi dan pergerakan agar terlihat natural.",
-    approach:
-      "Menggunakan base model sebagai dasar, lalu melakukan modeling lanjutan, rigging, dan animasi secara manual untuk menghasilkan gerakan yang sesuai dengan kebutuhan aplikasi.",
-    implementation:
-      "Melakukan pembuatan karakter dari base model, texturing, rigging, hingga animasi (aksi dan reaksi). Asset kemudian digunakan dalam aplikasi AR sebagai bagian dari visualisasi interaktif.",
-    outcome:
-      "Karakter 3D berhasil digunakan dalam aplikasi AR dan mampu menampilkan animasi sesuai skenario yang dirancang.",
-    images: [
-      "/images/projects/energy-audit-1.jpg",
-      "/images/projects/energy-audit-2.jpg",
-      "/images/projects/energy-audit-3.jpg",
-    ],
-    projectUrl: "https://github.com/username/energy-audit-tool",
-    publishedAt: "2023",
-  },
+  slug: "humanoid-robot-reverse-engineering",
+  title: "Reverse Engineering & Rekonstruksi Sistem Kendali Robot Humanoid",
+  category: "other",
+  categoryLabel: "Other Engineering",
+  description:
+    "Project mandiri berbasis riset untuk membongkar, mempelajari, dan merekonstruksi sistem elektronik robot humanoid yang menggunakan custom PCB tanpa mikrokontroler development board (IC disolder langsung). Dikembangkan sebagai bahan pembelajaran sekaligus persiapan kompetisi robotika, project ini masih berjalan hingga saat ini.",
+  tech: ["Reverse Engineering", "PCB Tracing", "IC Identification", "DC Geared Motor", "Position Feedback Sensor", "Sistem Kendali Berbasis Mikrokontroler"],
+  result: "Berhasil mengidentifikasi tipe dan fungsi IC pada PCB asli robot melalui proses tracing rangkaian secara manual. Project masih berjalan menuju tahap perancangan sistem kendali gerak baru, sebagai persiapan untuk kompetisi robotika yang akan diikuti.",
+  overview:
+    "Merekonstruksi pemahaman terhadap sistem elektronik robot humanoid yang minim dokumentasi, sebagai fondasi untuk merancang sistem kendali gerak yang baru dan dapat dikembangkan lebih lanjut untuk kebutuhan kompetisi.",
+  problem:
+    "Robot humanoid yang tersedia tidak memiliki dokumentasi teknis maupun mikrokontroler development board yang familiar — seluruh IC kendali disolder langsung ke PCB tanpa label atau referensi yang jelas, sehingga cara kerja sistem elektroniknya harus dipelajari dari nol.",
+  approach:
+    "Melakukan tracing rangkaian PCB secara manual untuk memetakan jalur sinyal dan komponen, mengidentifikasi tipe serta fungsi tiap IC melalui datasheet dan analisis pin-out, kemudian mempelajari mekanisme kendali aktuator (DC geared motor dengan sensor feedback posisi) sebelum merancang sistem kendali gerak berbasis mikrokontroler yang baru.",
+  implementation:
+    "Saya bertanggung jawab penuh dalam proses reverse engineering, mulai dari pembongkaran fisik robot, tracing jalur PCB, identifikasi komponen IC, hingga dokumentasi cara kerja sistem elektronik asli. Tahap ini menjadi dasar untuk perancangan sistem kendali gerak baru yang sedang saya kembangkan secara bertahap sebagai persiapan kompetisi.",
+  outcome:
+    "Project menghasilkan pemahaman mendalam terhadap arsitektur elektronik robot humanoid berbasis custom PCB, serta identifikasi komponen kendali yang menjadi fondasi pengembangan sistem kendali gerak baru. Project masih dalam tahap pengembangan aktif menuju kesiapan kompetisi.",
+  images: [
+    "/images/projects/NOT_YET.png",
+    "/images/projects/robot-humanoid-2.jpg",
+    "/images/projects/robot-humanoid-3.jpg",
+  ],
+  projectUrl: "https://drive.google.com/your-link-here",
+  publishedAt: "2026",
+},
   {
     slug: "web-logbook-management-system",
     title: "Web-Based Logbook Management System with PDF Reporting",
@@ -283,11 +283,11 @@ export const projects: Project[] = [
     outcome:
       "Sistem berhasil digunakan untuk pencatatan logbook secara digital dan membantu pengelolaan data kegiatan secara lebih terstruktur.",
     images: [
-      "/images/projects/energy-audit-1.jpg",
-      "/images/projects/energy-audit-2.jpg",
-      "/images/projects/energy-audit-3.jpg",
+      "/images/projects/logbook-1.jpg",
+      "/images/projects/logbook-2.jpg",
+      "/images/projects/logbook-3.jpg",
     ],
-    projectUrl: "https://github.com/username/energy-audit-tool",
-    publishedAt: "2023",
+    projectUrl: "https://drive.google.com/your-link-here", // ganti ke link asli
+    publishedAt: "2025",
   },
 ];

@@ -5,23 +5,23 @@ import SectionWrapper from "@/components/SectionWrapper";
 
 const experiences = [
   {
-    type: "programmer",
-    role: "AI Cohort Member",
-    company: "Coding Camp Powered by DBS Foundation",
-    period: "Feb 2026 — Sekarang",
-    location: "Remote, Indonesia",
-    points: [
-      "-",
-      "-",
-      "-",
-      "-",
-    ],
-  },
+  type: "programmer",
+  role: "AI Cohort Member",
+  company: "Coding Camp Powered by DBS Foundation",
+  period: "Februari 2026 — Agustus 2026",
+  location: "Remote, Indonesia",
+  points: [
+    "Berperan sebagai AI Engineer dan Project Manager dalam tim capstone 6 orang, mengembangkan Mirage: sistem prediksi mood berbasis CNN .",
+    "Melakukan evaluasi model CNN pada 58.409 citra (5 kelas emosi), mencapai akurasi 86,47% pada data uji independen.",
+    "Membangun fungsi inference model dan mengintegrasikannya ke backend, serta berkontribusi pada deployment end-to-end aplikasi.",
+    "Mengikuti kurikulum intensif AI/ML melalui Dicoding Academy, Instructor-Led Training, serta konsultasi rutin bersama fasilitator dan tim.",
+  ],
+},
   {
     type: "electrical",
     role: "Electrical Engineer Laboratory Assistant",
     company: "Universitas Malikussaleh",
-    period: "Maret 2025 — Sekarang",
+    period: "Maret 2025 — Juni 2026",
     location: "Lhokseumawe, Indonesia",
     points: [
       "Menjadi instruktur di 6 laboratorium teknik listrik, mendukung praktikum mahasiswa semester 2–7.",
@@ -34,7 +34,7 @@ const experiences = [
     type: "programmer",
     role: "Technical Lead - (AR & Web)",
     company: "Direktorat Jenderal Pendidikan Tinggi, Riset, dan Teknologi",
-    period: "April 2025 — Nov 2025",
+    period: "April 2025 — November 2025",
     location: "Hybrid, Indonesia",
     points: [
       "Memimpin bidang teknikal dalam proyek PKM-PM, menangani arsitektur sistem, implementasi, hingga deployment solusi AR dan web.",
@@ -47,7 +47,7 @@ const experiences = [
     type: "programmer",
     role: "Programmer Division",
     company: "UPT. BKK Universitas Malikussaleh",
-    period: "Maret 2025 — Jul 2025",
+    period: "Maret 2025 — Juli 2025",
     location: "Lhokseumawe, Indonesia",
     points: [
       "Mengembangkan sistem logbook magang berbasis web untuk mencatat aktivitas mingguan bagi ±40 pengguna aktif.",
@@ -60,7 +60,7 @@ const experiences = [
     type: "electrical",
     role: "Electrical Engineering Intern",
     company: "PT. Industri Nabati Lestari",
-    period: "Jan 2025 — Feb 2025",
+    period: "Januari 2025 — Februari 2025",
     location: "Simalungun, Indonesia",
     points: [
       "Melaksanakan maintenance kelistrikan industri melalui rotasi tim electrical, mechanical, dan utility untuk menjaga keandalan produksi.",
@@ -73,7 +73,7 @@ const experiences = [
     type: "programmer",
     role: "Information Technology Intern",
     company: "PT.Industri Nabati Lestari",
-    period: "Jul 2021 — Oct 2021",
+    period: "Juli 2021 — Oktober 2021",
     location: "Simalungun, Indonesia",
     points: [
       "Memberikan dukungan IT harian untuk troubleshooting hardware, Windows, software kantor, printer, CCTV, dan jaringan dasar",
