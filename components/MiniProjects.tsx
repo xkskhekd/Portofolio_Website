@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { miniProjects } from "@/data/mini-projects";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Category = "electrical" | "ml" | "other";
 
@@ -20,6 +21,7 @@ type Props = {
 
 export default function MiniProjects({ activeCategory }: Props) {
   const [expanded, setExpanded] = useState(false);
+  const isMobile = useIsMobile();
 
   const filtered = miniProjects.filter((p) => p.category === activeCategory);
   const visible = expanded ? filtered : filtered.slice(0, SHOW_LIMIT);
@@ -45,11 +47,12 @@ export default function MiniProjects({ activeCategory }: Props) {
           <div
             key={i}
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr auto",
-              gap: "16px",
+              display: isMobile ? "flex" : "grid",
+              flexDirection: isMobile ? "column" : undefined,
+              gridTemplateColumns: isMobile ? undefined : "1fr auto",
+              gap: isMobile ? "8px" : "16px",
               alignItems: "start",
-              padding: "16px 20px",
+              padding: isMobile ? "14px 16px" : "16px 20px",
               background: i % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent",
               borderLeft: `2px solid ${cfg.border}`,
               transition: "background 0.2s",
@@ -68,9 +71,13 @@ export default function MiniProjects({ activeCategory }: Props) {
                 {p.overview}
               </p>
             </div>
-            <div style={{ textAlign: "right", flexShrink: 0 }}>
+            <div style={{
+              textAlign: isMobile ? "left" : "right",
+              flexShrink: 0,
+              paddingLeft: isMobile ? "13px" : 0,
+            }}>
               <p style={{ fontSize: "12px", color: cfg.color, fontFamily: "monospace" }}>{p.year}</p>
-              <p style={{ fontSize: "11px", color: "#6B7280", marginTop: "2px", whiteSpace: "nowrap" }}>{p.context}</p>
+              <p style={{ fontSize: "11px", color: "#6B7280", marginTop: "2px", whiteSpace: isMobile ? "normal" : "nowrap" }}>{p.context}</p>
             </div>
           </div>
         ))}

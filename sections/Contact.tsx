@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Send } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const inputStyle: React.CSSProperties = {
   width: "100%",
@@ -50,37 +51,38 @@ const iconBoxStyle: React.CSSProperties = {
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const isMobile = useIsMobile();
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setStatus("sending");
+    e.preventDefault();
+    setStatus("sending");
 
-  const response = await fetch("https://formspree.io/f/xkoqkaqa", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: form.name,
-      email: form.email,
-      message: form.message,
-    }),
-  });
+    const response = await fetch("https://formspree.io/f/xkoqkaqa", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    });
 
-  if (response.ok) {
-    setStatus("sent");
-    setForm({ name: "", email: "", message: "" });
-  } else {
-    setStatus("idle");
-    alert("Gagal mengirim. Coba lagi.");
-  }
-};
+    if (response.ok) {
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      setStatus("idle");
+      alert("Gagal mengirim. Coba lagi.");
+    }
+  };
 
   return (
     <SectionWrapper id="contact">
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "80px",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+          gap: isMobile ? "48px" : "80px",
           alignItems: "start",
         }}
       >

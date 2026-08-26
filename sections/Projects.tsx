@@ -6,12 +6,14 @@ import SectionWrapper from "@/components/SectionWrapper";
 import ProjectCard from "@/components/ProjectCard";
 import MiniProjects from "@/components/MiniProjects";
 import { projects } from "@/data/projects";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type Category = "electrical" | "ml" | "other";
 
 const filters = [
   {
     label: "Electrical Engineering",
+    shortLabel: "Electrical",
     value: "electrical" as Category,
     color: "#FACC15",
     activeBg: "rgba(250,204,21,0.1)",
@@ -19,6 +21,7 @@ const filters = [
   },
   {
     label: "Machine Learning",
+    shortLabel: "ML",
     value: "ml" as Category,
     color: "#60A5FA",
     activeBg: "rgba(96,165,250,0.1)",
@@ -26,6 +29,7 @@ const filters = [
   },
   {
     label: "Other Projects",
+    shortLabel: "Other",
     value: "other" as Category,
     color: "#C084FC",
     activeBg: "rgba(192,132,252,0.1)",
@@ -35,6 +39,7 @@ const filters = [
 
 export default function Projects() {
   const [active, setActive] = useState<Category>("electrical");
+  const isMobile = useIsMobile();
 
   const filtered = projects.filter((p) => {
     if (active === "electrical") return p.category === "electrical";
@@ -57,28 +62,38 @@ export default function Projects() {
         </p>
       </div>
 
-      {/* Filter tabs */}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginBottom: "40px" }}>
-        {filters.map((f) => (
-          <button
-            key={f.value}
-            onClick={() => setActive(f.value)}
-            style={{
-              fontSize: "14px",
-              fontWeight: 500,
-              padding: "10px 20px",
-              borderRadius: "10px",
-              border: active === f.value ? `1px solid ${f.activeBorder}` : "1px solid rgba(255,255,255,0.08)",
-              background: active === f.value ? f.activeBg : "#141414",
-              color: active === f.value ? f.color : "#9CA3AF",
-              cursor: "pointer",
-              transition: "all 0.2s",
-            }}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
+      {/* Filter tabs — 1 baris penuh, label dipendekin di mobile */}
+<div
+  style={{
+    display: "flex",
+    flexWrap: "nowrap",
+    gap: isMobile ? "8px" : "10px",
+    marginBottom: "40px",
+  }}
+>
+  {filters.map((f) => (
+    <button
+      key={f.value}
+      onClick={() => setActive(f.value)}
+      style={{
+        fontSize: isMobile ? "13px" : "14px",
+        fontWeight: 500,
+        padding: isMobile ? "8px 14px" : "10px 20px",
+        borderRadius: "10px",
+        border: active === f.value ? `1px solid ${f.activeBorder}` : "1px solid rgba(255,255,255,0.08)",
+        background: active === f.value ? f.activeBg : "#141414",
+        color: active === f.value ? f.color : "#9CA3AF",
+        cursor: "pointer",
+        transition: "all 0.2s",
+        whiteSpace: "nowrap",
+        flex: isMobile ? "1" : "none",
+        textAlign: "center",
+      }}
+    >
+      {isMobile ? f.shortLabel : f.label}
+    </button>
+  ))}
+</div>
 
       {/* Project cards */}
       <motion.div
@@ -92,6 +107,10 @@ export default function Projects() {
 
       {/* Mini projects list — ikut kategori aktif */}
       <MiniProjects activeCategory={active} />
+
+      <style>{`
+        .filter-scroll::-webkit-scrollbar { display: none; }
+      `}</style>
     </SectionWrapper>
   );
 }

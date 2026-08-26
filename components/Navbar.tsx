@@ -46,7 +46,7 @@ export default function Navbar() {
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.05)" : "none",
         }}
       >
-        <div style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 80px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+        <div className="nav-container" style={{ maxWidth: "1152px", margin: "0 auto", padding: "0 80px", height: "64px", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
 
           <Link href="/" style={{ textDecoration: "none" }}>
             <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "18px", fontWeight: 700, letterSpacing: "-0.02em" }}>
@@ -62,7 +62,7 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
-            <a href="/cv.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#22C55E", background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: "8px", padding: "8px 20px", textDecoration: "none" }}>
+            <a href="/CV_Fathi_Annaqi.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "#22C55E", background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: "8px", padding: "8px 20px", textDecoration: "none" }}>
               <Download size={14} />
               Download CV
             </a>
@@ -81,7 +81,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            style={{ position: "fixed", top: "64px", left: 0, right: 0, zIndex: 40, background: "rgba(20,20,20,0.97)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)", padding: "16px 24px 24px" }}
+            style={{ position: "fixed", top: "64px", left: 0, right: 0, zIndex: 40, background: "rgba(20,20,20,0.97)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255,255,255,0.05)", padding: "16px 20px 24px" }}
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               {navItems.map((item) => (
@@ -89,7 +89,7 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
-              <a href="/cv.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "14px", color: "#22C55E", textDecoration: "none", paddingTop: "4px" }}>
+              <a href="/CV_Fathi_Annaqi.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "14px", color: "#22C55E", textDecoration: "none", paddingTop: "4px" }}>
                 <Download size={14} />
                 Download CV
               </a>
@@ -102,6 +102,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
           .mobile-btn { display: block !important; }
+          .nav-container { padding: 0 20px !important; }
         }
       `}</style>
     </>

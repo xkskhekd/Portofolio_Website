@@ -199,9 +199,9 @@ export const projects: Project[] = [
   outcome:
     "Model berhasil diimplementasikan ke dalam aplikasi web dengan fitur autentikasi, dashboard, riwayat prediksi, serta inference berbasis API sehingga dapat digunakan sebagai media self-assessment kondisi emosional.",
   images: [
-    "/images/projects/mirage-1.jpg",
-    "/images/projects/mirage-2.jpg",
-    "/images/projects/mirage-3.jpg",
+    "/images/projects/Mirage1.png",
+    "/images/projects/Mirage2.png",
+    "/images/projects/Mirage3.png",
   ],
   projectUrl: "https://github.com/xkskhekd/miragE_-Capstone",
   publishedAt: "2026",
@@ -229,9 +229,9 @@ export const projects: Project[] = [
   outcome:
     "Aplikasi berhasil menampilkan objek 3D dengan animasi secara real-time dan digunakan sebagai media edukasi hukum berbasis AR yang didemonstrasikan langsung kepada siswa SMA.",
   images: [
-    "/images/projects/sigempi-1.jpg",
-    "/images/projects/sigempi-2.jpg",
-    "/images/projects/sigempi-3.jpg",
+    "/images/projects/Gempi1.png",
+    "/images/projects/Gempi2.png",
+    "/images/projects/Gempi3.png",
   ],
   projectUrl: "https://sigempi.com/",
   publishedAt: "2025",

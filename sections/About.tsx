@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const skills: Record<string, string[]> = {
   "Electrical Engineering": [
@@ -25,21 +26,16 @@ const skills: Record<string, string[]> = {
   ],
 };
 
-// const stats = [
-//   { value: "4+", label: "Tahun Pengalaman" },
-//   { value: "15+", label: "Proyek Selesai" },
-//   { value: "2", label: "Publikasi" },
-//   { value: "3", label: "Sertifikasi" },
-// ];
-
 export default function About() {
+  const isMobile = useIsMobile();
+
   return (
     <SectionWrapper id="about">
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "64px",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+          gap: isMobile ? "40px" : "64px",
           alignItems: "start",
         }}
       >
@@ -73,7 +69,7 @@ export default function About() {
             ))}
           </div>
 
-          {/* Stats */}
+          {/* Stats (masih kosong, isi nanti) */}
           <div
             style={{
               display: "grid",
@@ -81,33 +77,7 @@ export default function About() {
               gap: "12px",
               marginTop: "32px",
             }}
-          >
-            {/* {stats.map(({ value, label }) => ( */}
-              {/* <div
-                key={label}
-                style={{
-                  textAlign: "center",
-                  padding: "16px 8px",
-                  background: "#141414",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  borderRadius: "12px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-space-grotesk), sans-serif",
-                    fontSize: "22px",
-                    fontWeight: 700,
-                    color: "#22C55E",
-                    marginBottom: "4px",
-                  }}
-                >
-                  {value}
-                </p>
-                <p style={{ fontSize: "11px", color: "#9CA3AF" }}>{label}</p>
-              </div>
-            ))} */}
-          </div>
+          />
         </div>
 
         {/* Right: Skills */}
@@ -115,7 +85,7 @@ export default function About() {
           {Object.entries(skills).map(([category, items], i) => (
             <motion.div
               key={category}
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: isMobile ? 0 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}

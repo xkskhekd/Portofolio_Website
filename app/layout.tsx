@@ -15,10 +15,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Electrical & ML Engineer",
+  title: "Fathi Annaqi — Electrical Engineer & Machine Learning Enthusiast",
   description:
-    "Electrical Engineer applying Machine Learning to real-world engineering systems",
-  keywords: ["electrical engineer", "machine learning", "embedded systems", "portfolio"],
+    "Portfolio Fathi Annaqi, mahasiswa Teknik Elektro Universitas Malikussaleh yang fokus di renewable energy, power system, dan machine learning. Lihat proyek-proyek dari power system, embedded systems, hingga deep learning.",
+  keywords: [
+    "Fathi Annaqi",
+    "Electrical Engineer",
+    "Machine Learning Engineer",
+    "Renewable Energy",
+    "Power System",
+    "Embedded Systems",
+    "ESP32",
+    "Deep Learning",
+    "Universitas Malikussaleh",
+    "Portfolio Teknik Elektro",
+  ],
+  authors: [{ name: "Fathi Annaqi" }],
+  creator: "Fathi Annaqi",
+  openGraph: {
+    title: "Fathi Annaqi — Electrical Engineer & Machine Learning Enthusiast",
+    description:
+      "Portfolio Fathi Annaqi: proyek power system, embedded systems, dan machine learning dari mahasiswa Teknik Elektro Universitas Malikussaleh.",
+    type: "website",
+    locale: "id_ID",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fathi Annaqi — Electrical Engineer & Machine Learning Enthusiast",
+    description:
+      "Portfolio Fathi Annaqi: proyek power system, embedded systems, dan machine learning.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +60,11 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth">
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} font-body bg-background text-text antialiased`}
+        style={{
+          background: "#0B0B0B",
+          color: "#EAEAEA",
+          fontFamily: "var(--font-inter), sans-serif",
+        }}
       >
         {children}
       </body>

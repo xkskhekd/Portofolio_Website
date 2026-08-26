@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Layers, BarChart2, Wrench } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const cards = [
   {
@@ -23,15 +24,30 @@ const cards = [
 ];
 
 export default function Approach() {
+  const isMobile = useIsMobile();
+
   return (
-    <SectionWrapper id="approach" className="bg-surface/30">
+    <SectionWrapper id="approach" style={{ background: "rgba(20,20,20,0.3)" }}>
       {/* Header */}
-      <div className="mb-12">
-        <p className="text-accent text-sm font-mono mb-2">// pendekatan</p>
-        <h2 className="font-heading text-4xl font-bold text-text">
+      <div style={{ marginBottom: "48px" }}>
+        <p style={{ color: "#22C55E", fontSize: "13px", fontFamily: "monospace", marginBottom: "8px" }}>
+          // pendekatan
+        </p>
+        <h2 style={{
+          fontFamily: "var(--font-space-grotesk), sans-serif",
+          fontSize: "clamp(28px, 5vw, 40px)",
+          fontWeight: 700,
+          color: "#EAEAEA",
+        }}>
           Engineering Approach
         </h2>
-        <p className="text-text-dim font-body mt-4 max-w-2xl leading-relaxed">
+        <p style={{
+          color: "#9CA3AF",
+          fontSize: "15px",
+          marginTop: "16px",
+          maxWidth: "640px",
+          lineHeight: 1.7,
+        }}>
           Saya mendekati masalah teknik dengan menggabungkan desain sistem yang
           praktis dengan metode berbasis data. Fokus saya adalah membangun sistem
           yang andal — dari infrastruktur daya hingga embedded intelligence.
@@ -39,7 +55,11 @@ export default function Approach() {
       </div>
 
       {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+        gap: isMobile ? "16px" : "24px",
+      }}>
         {cards.map(({ icon: Icon, title, desc }, i) => (
           <motion.div
             key={title}
@@ -47,15 +67,41 @@ export default function Approach() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
-            className="group bg-background border border-white/5 rounded-xl p-6 hover:border-accent/20 transition-all duration-300"
+            style={{
+              background: "#0B0B0B",
+              border: "1px solid rgba(255,255,255,0.05)",
+              borderRadius: "12px",
+              padding: "24px",
+              transition: "border-color 0.3s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(34,197,94,0.2)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.05)"; }}
           >
-            <div className="w-10 h-10 bg-accent/10 border border-accent/20 rounded-lg flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
-              <Icon size={18} className="text-accent" />
+            <div style={{
+              width: "40px",
+              height: "40px",
+              background: "rgba(34,197,94,0.1)",
+              border: "1px solid rgba(34,197,94,0.2)",
+              borderRadius: "10px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "20px",
+            }}>
+              <Icon size={18} color="#22C55E" />
             </div>
-            <h3 className="font-heading font-semibold text-lg text-text mb-3">
+            <h3 style={{
+              fontFamily: "var(--font-space-grotesk), sans-serif",
+              fontWeight: 600,
+              fontSize: "18px",
+              color: "#EAEAEA",
+              marginBottom: "12px",
+            }}>
               {title}
             </h3>
-            <p className="text-text-dim text-sm font-body leading-relaxed">{desc}</p>
+            <p style={{ color: "#9CA3AF", fontSize: "14px", lineHeight: 1.7 }}>
+              {desc}
+            </p>
           </motion.div>
         ))}
       </div>

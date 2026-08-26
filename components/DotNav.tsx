@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -13,6 +14,7 @@ const sections = [
 
 export default function DotNav() {
   const [active, setActive] = useState("hero");
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +36,8 @@ export default function DotNav() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMobile) return null;
 
   return (
     <div style={{

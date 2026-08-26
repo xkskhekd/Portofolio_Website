@@ -2,21 +2,22 @@
 
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/SectionWrapper";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const experiences = [
   {
-  type: "programmer",
-  role: "AI Cohort Member",
-  company: "Coding Camp Powered by DBS Foundation",
-  period: "Februari 2026 — Agustus 2026",
-  location: "Remote, Indonesia",
-  points: [
-    "Berperan sebagai AI Engineer dan Project Manager dalam tim capstone 6 orang, mengembangkan Mirage: sistem prediksi mood berbasis CNN .",
-    "Melakukan evaluasi model CNN pada 58.409 citra (5 kelas emosi), mencapai akurasi 86,47% pada data uji independen.",
-    "Membangun fungsi inference model dan mengintegrasikannya ke backend, serta berkontribusi pada deployment end-to-end aplikasi.",
-    "Mengikuti kurikulum intensif AI/ML melalui Dicoding Academy, Instructor-Led Training, serta konsultasi rutin bersama fasilitator dan tim.",
-  ],
-},
+    type: "programmer",
+    role: "AI Cohort Member",
+    company: "Coding Camp Powered by DBS Foundation",
+    period: "Februari 2026 — Agustus 2026",
+    location: "Remote, Indonesia",
+    points: [
+      "Berperan sebagai AI Engineer dan Project Manager dalam tim capstone 6 orang, mengembangkan Mirage: sistem prediksi mood berbasis CNN .",
+      "Melakukan evaluasi model CNN pada 58.409 citra (5 kelas emosi), mencapai akurasi 86,47% pada data uji independen.",
+      "Membangun fungsi inference model dan mengintegrasikannya ke backend, serta berkontribusi pada deployment end-to-end aplikasi.",
+      "Mengikuti kurikulum intensif AI/ML melalui Dicoding Academy, Instructor-Led Training, serta konsultasi rutin bersama fasilitator dan tim.",
+    ],
+  },
   {
     type: "electrical",
     role: "Electrical Engineer Laboratory Assistant",
@@ -102,6 +103,8 @@ const typeConfig = {
 };
 
 export default function Experience() {
+  const isMobile = useIsMobile();
+
   return (
     <SectionWrapper id="experience" style={{ background: "rgba(20,20,20,0.4)" }}>
       {/* Header */}
@@ -143,14 +146,14 @@ export default function Experience() {
         {/* Vertical line */}
         <div style={{
           position: "absolute",
-          left: "20px",
+          left: isMobile ? "10px" : "20px",
           top: 0,
           bottom: 0,
           width: "1px",
           background: "linear-gradient(to bottom, #22C55E, rgba(34,197,94,0.1))",
         }} />
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: isMobile ? "20px" : "32px" }}>
           {experiences.map((exp, i) => {
             const cfg = typeConfig[exp.type as keyof typeof typeConfig];
             return (
@@ -160,12 +163,12 @@ export default function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                style={{ display: "flex", gap: "32px", alignItems: "flex-start" }}
+                style={{ display: "flex", gap: isMobile ? "16px" : "32px", alignItems: "flex-start" }}
               >
                 {/* Dot on timeline */}
                 <div style={{
                   position: "relative",
-                  width: "40px",
+                  width: isMobile ? "20px" : "40px",
                   flexShrink: 0,
                   display: "flex",
                   justifyContent: "center",
@@ -189,12 +192,14 @@ export default function Experience() {
                   border: "1px solid rgba(255,255,255,0.07)",
                   borderLeft: `3px solid ${cfg.dot}`,
                   borderRadius: "12px",
-                  padding: "24px",
+                  padding: isMobile ? "16px" : "24px",
                   marginBottom: "8px",
+                  minWidth: 0,
                 }}>
                   {/* Card header */}
                   <div style={{
                     display: "flex",
+                    flexDirection: isMobile ? "column" : "row",
                     justifyContent: "space-between",
                     flexWrap: "wrap",
                     gap: "8px",
@@ -226,7 +231,7 @@ export default function Experience() {
                       </h3>
                       <p style={{ color: "#22C55E", fontSize: "13px" }}>{exp.company}</p>
                     </div>
-                    <div style={{ textAlign: "right" }}>
+                    <div style={{ textAlign: isMobile ? "left" : "right" }}>
                       <p style={{ color: "#9CA3AF", fontSize: "12px", fontFamily: "monospace" }}>
                         {exp.period}
                       </p>
